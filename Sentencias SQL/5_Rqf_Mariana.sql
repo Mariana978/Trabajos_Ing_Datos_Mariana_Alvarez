@@ -36,6 +36,7 @@ create table Producto(
 create table Stock(
     codigoStock varchar(20) primary key,
     codigoProductoFK varchar(20) not null,
+    cantidadDisponible int not null,  
     estadoStock bool not null,
     fEntradaProduc date not null,
     fSalidaProduc date not null,
