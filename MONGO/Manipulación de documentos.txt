@@ -1,0 +1,24 @@
+CREO UN OBJETO PARA INVOCAR UN MÉTODO
+
+actualizar:
+db.coleccion.updateOne()
+db.productos.updateOne({ nombre: "Laptop" },{ $set: { precio: 5000000 } })
+
+db.productos.updateMany({precio:{$lt:100000}},{$set:{enOferta:true}})
+
+
+db.productos.deleteOne({ $and: [{ nombre: "Teclado" }, { precio: 88888}]})
+
+db.Clientes.deleteMany({ $or: [{ ciudad: "Barcelona" }, { nombre: "Juan" }] })
+
+
+eliminar una colección
+db.coleccion.drop()
+
+eliminar base de datos: Entrar a la base de datos que quiero eliminar y aplicar la sentencia
+db.dropDatabase()
+
+
+Relacionar colecciones usando la clave que se genera para cada documento
+db.ventas.aggregate([{$lookup:{from:"productos",localField:"productoId", foreignFiled:"_id" as "producto"}},{$lookup:{from:"Clientes", localField:"clienteId", foreignField:"_id" as "clientes"}}])
+
