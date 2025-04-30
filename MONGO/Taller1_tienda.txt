@@ -1,0 +1,1399 @@
+use tienda
+switched to db tienda
+show collections
+productos
+db.createCollection ("clientes")
+{ ok: 1 }
+db.Clientes.insertMany([{nombre: "Ana",edad: 25,ciudad: "Madrid",activo: true,
+    compras: [120, 60, 90], membresia: { tipo: "oro", desde: 2021 },telefono: "123456789",
+  },
+  {
+    nombre: "Luis",
+    edad: 30,
+    ciudad: "Barcelona",
+    activo: false,
+    compras: [30],
+    membresia: { tipo: "plata", desde: 2023 },
+  },
+  {
+    nombre: "Carlos",
+    edad: 19,
+    ciudad: "Madrid",
+    activo: true,
+    compras: [],
+    telefono: "987654321",
+  },
+  {
+    nombre: "Lucía",
+    edad: 45,
+    ciudad: "Sevilla",
+    activo: false,
+    compras: [200, 300, 400, 500],
+    membresia: { tipo: "oro", desde: 2020 },
+  },
+  {
+    nombre: "Pedro",
+    edad: 35,
+    ciudad: "Valencia",
+    activo: true,
+    compras: [10, 20],
+  },
+  {
+    nombre: "Elena",
+    edad: 28,
+    ciudad: "Madrid",
+    activo: false,
+    compras: [99, 1],
+    telefono: "111222333",
+    membresia: { tipo: "bronce", desde: 2022 },
+  },
+  {
+    nombre: "Mario",
+    edad: 22,
+    ciudad: "Bilbao",
+    activo: true,
+    compras: [120, 180],
+  },
+  {
+    nombre: "Sara",
+    edad: 50,
+    ciudad: "Madrid",
+    activo: false,
+    compras: [150, 250, 350],
+    membresia: { tipo: "oro", desde: 2019 },
+    telefono: "000111222",
+  },
+  {
+    nombre: "Juan",
+    edad: 40,
+    ciudad: "Valencia",
+    activo: true,
+    compras: [75],
+    telefono: "333444555",
+  },
+  {
+    nombre: "Sofía",
+    edad: 29,
+    ciudad: "Barcelona",
+    activo: true,
+    compras: [100, 150],
+    membresia: { tipo: "plata", desde: 2021 },
+  }
+]);
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId('68117083681d9ed48beeae7d'),
+    '1': ObjectId('68117083681d9ed48beeae7e'),
+    '2': ObjectId('68117083681d9ed48beeae7f'),
+    '3': ObjectId('68117083681d9ed48beeae80'),
+    '4': ObjectId('68117083681d9ed48beeae81'),
+    '5': ObjectId('68117083681d9ed48beeae82'),
+    '6': ObjectId('68117083681d9ed48beeae83'),
+    '7': ObjectId('68117083681d9ed48beeae84'),
+    '8': ObjectId('68117083681d9ed48beeae85'),
+    '9': ObjectId('68117083681d9ed48beeae86')
+  }
+}
+show collections
+clientes
+Clientes
+productos
+db.clientes.drop()
+true
+show collections
+Clientes
+productos
+db.createCollection("ventas")
+{ ok: 1 }
+db.ventas.insertMany([{codigo: "V001",cliente: "Ana",total: 120,
+    productos: ["camisa", "pantalón"],fecha: new Date("2024-01-10"),
+    pagado: true, metodoPago: "tarjeta", detalles: { items: 2, descuento: 10 }},
+  {codigo: "V002",cliente: "Luis",total: 30,productos: ["gorro"],fecha: new Date("2024-01-12"),
+    pagado: false,metodoPago: "efectivo",detalles: { items: 1, descuento: 0 }},
+  {codigo: "V003",cliente: "Lucía",total: 400,productos: ["chaqueta", "zapatos", "camisa"],
+    fecha: new Date("2024-01-15"),pagado: true,metodoPago: "tarjeta",detalles: { items: 3, descuento: 20 }
+  },
+  {codigo: "V004",cliente: "Pedro",total: 50,productos: ["camiseta"],
+    fecha: new Date("2024-02-01"),pagado: false,metodoPago: "efectivo"},
+  {codigo: "V005",cliente: "Carlos",total: 90,productos: [],fecha: new Date("2024-02-05"),
+    pagado: true,metodoPago: "tarjeta",detalles: { items: 0, descuento: 0 }},
+  {
+    codigo: "V006",
+    cliente: "Elena",
+    total: 180,
+    productos: ["vestido", "zapatos"],
+    fecha: new Date("2024-02-10"),
+    pagado: true,
+    metodoPago: "efectivo",
+    detalles: { items: 2, descuento: 5 }
+  },
+  {
+    codigo: "V007",
+    cliente: "Sara",
+    total: 250,
+    productos: ["abrigo", "bolso", "bufanda"],
+    fecha: new Date("2024-03-01"),
+    pagado: false,
+    metodoPago: "tarjeta",
+    detalles: { items: 3, descuento: 15 }
+  },
+  {
+    codigo: "V008",
+    cliente: "Mario",
+    total: 75,
+    productos: ["pantalón"],
+    fecha: new Date("2024-03-10"),
+    pagado: true,
+    metodoPago: "transferencia"
+  },
+  {
+    codigo: "V009",
+    cliente: "Sofía",
+    total: 100,
+    productos: ["falda", "camisa"],
+    fecha: new Date("2024-04-01"),
+    pagado: false,
+    metodoPago: "efectivo",
+    detalles: { items: 2, descuento: 0 }
+  },
+  {
+    codigo: "V010",
+    cliente: "Juan",
+    total: 300,
+    productos: ["chaqueta", "botas", "bufanda"],
+    fecha: new Date("2024-04-15"),
+    pagado: true,
+    metodoPago: "tarjeta"
+  }
+]);
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId('681171c4681d9ed48beeae87'),
+    '1': ObjectId('681171c4681d9ed48beeae88'),
+    '2': ObjectId('681171c4681d9ed48beeae89'),
+    '3': ObjectId('681171c4681d9ed48beeae8a'),
+    '4': ObjectId('681171c4681d9ed48beeae8b'),
+    '5': ObjectId('681171c4681d9ed48beeae8c'),
+    '6': ObjectId('681171c4681d9ed48beeae8d'),
+    '7': ObjectId('681171c4681d9ed48beeae8e'),
+    '8': ObjectId('681171c4681d9ed48beeae8f'),
+    '9': ObjectId('681171c4681d9ed48beeae90')
+  }
+}
+db.Clientes.find().pretty()
+{
+  _id: ObjectId('68117083681d9ed48beeae7d'),
+  nombre: 'Ana',
+  edad: 25,
+  ciudad: 'Madrid',
+  activo: true,
+  compras: [
+    120,
+    60,
+    90
+  ],
+  membresia: {
+    tipo: 'oro',
+    desde: 2021
+  },
+  telefono: '123456789'
+}
+{
+  _id: ObjectId('68117083681d9ed48beeae7e'),
+  nombre: 'Luis',
+  edad: 30,
+  ciudad: 'Barcelona',
+  activo: false,
+  compras: [
+    30
+  ],
+  membresia: {
+    tipo: 'plata',
+    desde: 2023
+  }
+}
+{
+  _id: ObjectId('68117083681d9ed48beeae7f'),
+  nombre: 'Carlos',
+  edad: 19,
+  ciudad: 'Madrid',
+  activo: true,
+  compras: [],
+  telefono: '987654321'
+}
+{
+  _id: ObjectId('68117083681d9ed48beeae80'),
+  nombre: 'Lucía',
+  edad: 45,
+  ciudad: 'Sevilla',
+  activo: false,
+  compras: [
+    200,
+    300,
+    400,
+    500
+  ],
+  membresia: {
+    tipo: 'oro',
+    desde: 2020
+  }
+}
+{
+  _id: ObjectId('68117083681d9ed48beeae81'),
+  nombre: 'Pedro',
+  edad: 35,
+  ciudad: 'Valencia',
+  activo: true,
+  compras: [
+    10,
+    20
+  ]
+}
+{
+  _id: ObjectId('68117083681d9ed48beeae82'),
+  nombre: 'Elena',
+  edad: 28,
+  ciudad: 'Madrid',
+  activo: false,
+  compras: [
+    99,
+    1
+  ],
+  telefono: '111222333',
+  membresia: {
+    tipo: 'bronce',
+    desde: 2022
+  }
+}
+{
+  _id: ObjectId('68117083681d9ed48beeae83'),
+  nombre: 'Mario',
+  edad: 22,
+  ciudad: 'Bilbao',
+  activo: true,
+  compras: [
+    120,
+    180
+  ]
+}
+{
+  _id: ObjectId('68117083681d9ed48beeae84'),
+  nombre: 'Sara',
+  edad: 50,
+  ciudad: 'Madrid',
+  activo: false,
+  compras: [
+    150,
+    250,
+    350
+  ],
+  membresia: {
+    tipo: 'oro',
+    desde: 2019
+  },
+  telefono: '000111222'
+}
+{
+  _id: ObjectId('68117083681d9ed48beeae85'),
+  nombre: 'Juan',
+  edad: 40,
+  ciudad: 'Valencia',
+  activo: true,
+  compras: [
+    75
+  ],
+  telefono: '333444555'
+}
+{
+  _id: ObjectId('68117083681d9ed48beeae86'),
+  nombre: 'Sofía',
+  edad: 29,
+  ciudad: 'Barcelona',
+  activo: true,
+  compras: [
+    100,
+    150
+  ],
+  membresia: {
+    tipo: 'plata',
+    desde: 2021
+  }
+}
+db.ventas.find({ total: { $eq: 90 } })
+{
+  _id: ObjectId('681171c4681d9ed48beeae8b'),
+  codigo: 'V005',
+  cliente: 'Carlos',
+  total: 90,
+  productos: [],
+  fecha: 2024-02-05T00:00:00.000Z,
+  pagado: true,
+  metodoPago: 'tarjeta',
+  detalles: {
+    items: 0,
+    descuento: 0
+  }
+}
+db.ventas.find({ total: { $gt: 100 } })
+{
+  _id: ObjectId('681171c4681d9ed48beeae87'),
+  codigo: 'V001',
+  cliente: 'Ana',
+  total: 120,
+  productos: [
+    'camisa',
+    'pantalón'
+  ],
+  fecha: 2024-01-10T00:00:00.000Z,
+  pagado: true,
+  metodoPago: 'tarjeta',
+  detalles: {
+    items: 2,
+    descuento: 10
+  }
+}
+{
+  _id: ObjectId('681171c4681d9ed48beeae89'),
+  codigo: 'V003',
+  cliente: 'Lucía',
+  total: 400,
+  productos: [
+    'chaqueta',
+    'zapatos',
+    'camisa'
+  ],
+  fecha: 2024-01-15T00:00:00.000Z,
+  pagado: true,
+  metodoPago: 'tarjeta',
+  detalles: {
+    items: 3,
+    descuento: 20
+  }
+}
+{
+  _id: ObjectId('681171c4681d9ed48beeae8c'),
+  codigo: 'V006',
+  cliente: 'Elena',
+  total: 180,
+  productos: [
+    'vestido',
+    'zapatos'
+  ],
+  fecha: 2024-02-10T00:00:00.000Z,
+  pagado: true,
+  metodoPago: 'efectivo',
+  detalles: {
+    items: 2,
+    descuento: 5
+  }
+}
+{
+  _id: ObjectId('681171c4681d9ed48beeae8d'),
+  codigo: 'V007',
+  cliente: 'Sara',
+  total: 250,
+  productos: [
+    'abrigo',
+    'bolso',
+    'bufanda'
+  ],
+  fecha: 2024-03-01T00:00:00.000Z,
+  pagado: false,
+  metodoPago: 'tarjeta',
+  detalles: {
+    items: 3,
+    descuento: 15
+  }
+}
+{
+  _id: ObjectId('681171c4681d9ed48beeae90'),
+  codigo: 'V010',
+  cliente: 'Juan',
+  total: 300,
+  productos: [
+    'chaqueta',
+    'botas',
+    'bufanda'
+  ],
+  fecha: 2024-04-15T00:00:00.000Z,
+  pagado: true,
+  metodoPago: 'tarjeta'
+}
+db.ventas.find({ metodoPago: { $ne: "tarjeta" } })
+{
+  _id: ObjectId('681171c4681d9ed48beeae88'),
+  codigo: 'V002',
+  cliente: 'Luis',
+  total: 30,
+  productos: [
+    'gorro'
+  ],
+  fecha: 2024-01-12T00:00:00.000Z,
+  pagado: false,
+  metodoPago: 'efectivo',
+  detalles: {
+    items: 1,
+    descuento: 0
+  }
+}
+{
+  _id: ObjectId('681171c4681d9ed48beeae8a'),
+  codigo: 'V004',
+  cliente: 'Pedro',
+  total: 50,
+  productos: [
+    'camiseta'
+  ],
+  fecha: 2024-02-01T00:00:00.000Z,
+  pagado: false,
+  metodoPago: 'efectivo'
+}
+{
+  _id: ObjectId('681171c4681d9ed48beeae8c'),
+  codigo: 'V006',
+  cliente: 'Elena',
+  total: 180,
+  productos: [
+    'vestido',
+    'zapatos'
+  ],
+  fecha: 2024-02-10T00:00:00.000Z,
+  pagado: true,
+  metodoPago: 'efectivo',
+  detalles: {
+    items: 2,
+    descuento: 5
+  }
+}
+{
+  _id: ObjectId('681171c4681d9ed48beeae8e'),
+  codigo: 'V008',
+  cliente: 'Mario',
+  total: 75,
+  productos: [
+    'pantalón'
+  ],
+  fecha: 2024-03-10T00:00:00.000Z,
+  pagado: true,
+  metodoPago: 'transferencia'
+}
+{
+  _id: ObjectId('681171c4681d9ed48beeae8f'),
+  codigo: 'V009',
+  cliente: 'Sofía',
+  total: 100,
+  productos: [
+    'falda',
+    'camisa'
+  ],
+  fecha: 2024-04-01T00:00:00.000Z,
+  pagado: false,
+  metodoPago: 'efectivo',
+  detalles: {
+    items: 2,
+    descuento: 0
+  }
+}
+db.ventas.find({ metodoPago: { $in: ["tarjeta", "efectivo"] } })
+{
+  _id: ObjectId('681171c4681d9ed48beeae87'),
+  codigo: 'V001',
+  cliente: 'Ana',
+  total: 120,
+  productos: [
+    'camisa',
+    'pantalón'
+  ],
+  fecha: 2024-01-10T00:00:00.000Z,
+  pagado: true,
+  metodoPago: 'tarjeta',
+  detalles: {
+    items: 2,
+    descuento: 10
+  }
+}
+{
+  _id: ObjectId('681171c4681d9ed48beeae88'),
+  codigo: 'V002',
+  cliente: 'Luis',
+  total: 30,
+  productos: [
+    'gorro'
+  ],
+  fecha: 2024-01-12T00:00:00.000Z,
+  pagado: false,
+  metodoPago: 'efectivo',
+  detalles: {
+    items: 1,
+    descuento: 0
+  }
+}
+{
+  _id: ObjectId('681171c4681d9ed48beeae89'),
+  codigo: 'V003',
+  cliente: 'Lucía',
+  total: 400,
+  productos: [
+    'chaqueta',
+    'zapatos',
+    'camisa'
+  ],
+  fecha: 2024-01-15T00:00:00.000Z,
+  pagado: true,
+  metodoPago: 'tarjeta',
+  detalles: {
+    items: 3,
+    descuento: 20
+  }
+}
+{
+  _id: ObjectId('681171c4681d9ed48beeae8a'),
+  codigo: 'V004',
+  cliente: 'Pedro',
+  total: 50,
+  productos: [
+    'camiseta'
+  ],
+  fecha: 2024-02-01T00:00:00.000Z,
+  pagado: false,
+  metodoPago: 'efectivo'
+}
+{
+  _id: ObjectId('681171c4681d9ed48beeae8b'),
+  codigo: 'V005',
+  cliente: 'Carlos',
+  total: 90,
+  productos: [],
+  fecha: 2024-02-05T00:00:00.000Z,
+  pagado: true,
+  metodoPago: 'tarjeta',
+  detalles: {
+    items: 0,
+    descuento: 0
+  }
+}
+{
+  _id: ObjectId('681171c4681d9ed48beeae8c'),
+  codigo: 'V006',
+  cliente: 'Elena',
+  total: 180,
+  productos: [
+    'vestido',
+    'zapatos'
+  ],
+  fecha: 2024-02-10T00:00:00.000Z,
+  pagado: true,
+  metodoPago: 'efectivo',
+  detalles: {
+    items: 2,
+    descuento: 5
+  }
+}
+{
+  _id: ObjectId('681171c4681d9ed48beeae8d'),
+  codigo: 'V007',
+  cliente: 'Sara',
+  total: 250,
+  productos: [
+    'abrigo',
+    'bolso',
+    'bufanda'
+  ],
+  fecha: 2024-03-01T00:00:00.000Z,
+  pagado: false,
+  metodoPago: 'tarjeta',
+  detalles: {
+    items: 3,
+    descuento: 15
+  }
+}
+{
+  _id: ObjectId('681171c4681d9ed48beeae8f'),
+  codigo: 'V009',
+  cliente: 'Sofía',
+  total: 100,
+  productos: [
+    'falda',
+    'camisa'
+  ],
+  fecha: 2024-04-01T00:00:00.000Z,
+  pagado: false,
+  metodoPago: 'efectivo',
+  detalles: {
+    items: 2,
+    descuento: 0
+  }
+}
+{
+  _id: ObjectId('681171c4681d9ed48beeae90'),
+  codigo: 'V010',
+  cliente: 'Juan',
+  total: 300,
+  productos: [
+    'chaqueta',
+    'botas',
+    'bufanda'
+  ],
+  fecha: 2024-04-15T00:00:00.000Z,
+  pagado: true,
+  metodoPago: 'tarjeta'
+}
+db.ventas.find({ cliente: { $nin: ["Ana", "Luis"] } })
+{
+  _id: ObjectId('681171c4681d9ed48beeae89'),
+  codigo: 'V003',
+  cliente: 'Lucía',
+  total: 400,
+  productos: [
+    'chaqueta',
+    'zapatos',
+    'camisa'
+  ],
+  fecha: 2024-01-15T00:00:00.000Z,
+  pagado: true,
+  metodoPago: 'tarjeta',
+  detalles: {
+    items: 3,
+    descuento: 20
+  }
+}
+{
+  _id: ObjectId('681171c4681d9ed48beeae8a'),
+  codigo: 'V004',
+  cliente: 'Pedro',
+  total: 50,
+  productos: [
+    'camiseta'
+  ],
+  fecha: 2024-02-01T00:00:00.000Z,
+  pagado: false,
+  metodoPago: 'efectivo'
+}
+{
+  _id: ObjectId('681171c4681d9ed48beeae8b'),
+  codigo: 'V005',
+  cliente: 'Carlos',
+  total: 90,
+  productos: [],
+  fecha: 2024-02-05T00:00:00.000Z,
+  pagado: true,
+  metodoPago: 'tarjeta',
+  detalles: {
+    items: 0,
+    descuento: 0
+  }
+}
+{
+  _id: ObjectId('681171c4681d9ed48beeae8c'),
+  codigo: 'V006',
+  cliente: 'Elena',
+  total: 180,
+  productos: [
+    'vestido',
+    'zapatos'
+  ],
+  fecha: 2024-02-10T00:00:00.000Z,
+  pagado: true,
+  metodoPago: 'efectivo',
+  detalles: {
+    items: 2,
+    descuento: 5
+  }
+}
+{
+  _id: ObjectId('681171c4681d9ed48beeae8d'),
+  codigo: 'V007',
+  cliente: 'Sara',
+  total: 250,
+  productos: [
+    'abrigo',
+    'bolso',
+    'bufanda'
+  ],
+  fecha: 2024-03-01T00:00:00.000Z,
+  pagado: false,
+  metodoPago: 'tarjeta',
+  detalles: {
+    items: 3,
+    descuento: 15
+  }
+}
+{
+  _id: ObjectId('681171c4681d9ed48beeae8e'),
+  codigo: 'V008',
+  cliente: 'Mario',
+  total: 75,
+  productos: [
+    'pantalón'
+  ],
+  fecha: 2024-03-10T00:00:00.000Z,
+  pagado: true,
+  metodoPago: 'transferencia'
+}
+{
+  _id: ObjectId('681171c4681d9ed48beeae8f'),
+  codigo: 'V009',
+  cliente: 'Sofía',
+  total: 100,
+  productos: [
+    'falda',
+    'camisa'
+  ],
+  fecha: 2024-04-01T00:00:00.000Z,
+  pagado: false,
+  metodoPago: 'efectivo',
+  detalles: {
+    items: 2,
+    descuento: 0
+  }
+}
+{
+  _id: ObjectId('681171c4681d9ed48beeae90'),
+  codigo: 'V010',
+  cliente: 'Juan',
+  total: 300,
+  productos: [
+    'chaqueta',
+    'botas',
+    'bufanda'
+  ],
+  fecha: 2024-04-15T00:00:00.000Z,
+  pagado: true,
+  metodoPago: 'tarjeta'
+}
+db.ventas.find({ total: { $not: { $gt: 100 } } })
+{
+  _id: ObjectId('681171c4681d9ed48beeae88'),
+  codigo: 'V002',
+  cliente: 'Luis',
+  total: 30,
+  productos: [
+    'gorro'
+  ],
+  fecha: 2024-01-12T00:00:00.000Z,
+  pagado: false,
+  metodoPago: 'efectivo',
+  detalles: {
+    items: 1,
+    descuento: 0
+  }
+}
+{
+  _id: ObjectId('681171c4681d9ed48beeae8a'),
+  codigo: 'V004',
+  cliente: 'Pedro',
+  total: 50,
+  productos: [
+    'camiseta'
+  ],
+  fecha: 2024-02-01T00:00:00.000Z,
+  pagado: false,
+  metodoPago: 'efectivo'
+}
+{
+  _id: ObjectId('681171c4681d9ed48beeae8b'),
+  codigo: 'V005',
+  cliente: 'Carlos',
+  total: 90,
+  productos: [],
+  fecha: 2024-02-05T00:00:00.000Z,
+  pagado: true,
+  metodoPago: 'tarjeta',
+  detalles: {
+    items: 0,
+    descuento: 0
+  }
+}
+{
+  _id: ObjectId('681171c4681d9ed48beeae8e'),
+  codigo: 'V008',
+  cliente: 'Mario',
+  total: 75,
+  productos: [
+    'pantalón'
+  ],
+  fecha: 2024-03-10T00:00:00.000Z,
+  pagado: true,
+  metodoPago: 'transferencia'
+}
+{
+  _id: ObjectId('681171c4681d9ed48beeae8f'),
+  codigo: 'V009',
+  cliente: 'Sofía',
+  total: 100,
+  productos: [
+    'falda',
+    'camisa'
+  ],
+  fecha: 2024-04-01T00:00:00.000Z,
+  pagado: false,
+  metodoPago: 'efectivo',
+  detalles: {
+    items: 2,
+    descuento: 0
+  }
+}
+db.ventas.find({ codigo: { $regex: /^V00/ } })
+{
+  _id: ObjectId('681171c4681d9ed48beeae87'),
+  codigo: 'V001',
+  cliente: 'Ana',
+  total: 120,
+  productos: [
+    'camisa',
+    'pantalón'
+  ],
+  fecha: 2024-01-10T00:00:00.000Z,
+  pagado: true,
+  metodoPago: 'tarjeta',
+  detalles: {
+    items: 2,
+    descuento: 10
+  }
+}
+{
+  _id: ObjectId('681171c4681d9ed48beeae88'),
+  codigo: 'V002',
+  cliente: 'Luis',
+  total: 30,
+  productos: [
+    'gorro'
+  ],
+  fecha: 2024-01-12T00:00:00.000Z,
+  pagado: false,
+  metodoPago: 'efectivo',
+  detalles: {
+    items: 1,
+    descuento: 0
+  }
+}
+{
+  _id: ObjectId('681171c4681d9ed48beeae89'),
+  codigo: 'V003',
+  cliente: 'Lucía',
+  total: 400,
+  productos: [
+    'chaqueta',
+    'zapatos',
+    'camisa'
+  ],
+  fecha: 2024-01-15T00:00:00.000Z,
+  pagado: true,
+  metodoPago: 'tarjeta',
+  detalles: {
+    items: 3,
+    descuento: 20
+  }
+}
+{
+  _id: ObjectId('681171c4681d9ed48beeae8a'),
+  codigo: 'V004',
+  cliente: 'Pedro',
+  total: 50,
+  productos: [
+    'camiseta'
+  ],
+  fecha: 2024-02-01T00:00:00.000Z,
+  pagado: false,
+  metodoPago: 'efectivo'
+}
+{
+  _id: ObjectId('681171c4681d9ed48beeae8b'),
+  codigo: 'V005',
+  cliente: 'Carlos',
+  total: 90,
+  productos: [],
+  fecha: 2024-02-05T00:00:00.000Z,
+  pagado: true,
+  metodoPago: 'tarjeta',
+  detalles: {
+    items: 0,
+    descuento: 0
+  }
+}
+{
+  _id: ObjectId('681171c4681d9ed48beeae8c'),
+  codigo: 'V006',
+  cliente: 'Elena',
+  total: 180,
+  productos: [
+    'vestido',
+    'zapatos'
+  ],
+  fecha: 2024-02-10T00:00:00.000Z,
+  pagado: true,
+  metodoPago: 'efectivo',
+  detalles: {
+    items: 2,
+    descuento: 5
+  }
+}
+{
+  _id: ObjectId('681171c4681d9ed48beeae8d'),
+  codigo: 'V007',
+  cliente: 'Sara',
+  total: 250,
+  productos: [
+    'abrigo',
+    'bolso',
+    'bufanda'
+  ],
+  fecha: 2024-03-01T00:00:00.000Z,
+  pagado: false,
+  metodoPago: 'tarjeta',
+  detalles: {
+    items: 3,
+    descuento: 15
+  }
+}
+{
+  _id: ObjectId('681171c4681d9ed48beeae8e'),
+  codigo: 'V008',
+  cliente: 'Mario',
+  total: 75,
+  productos: [
+    'pantalón'
+  ],
+  fecha: 2024-03-10T00:00:00.000Z,
+  pagado: true,
+  metodoPago: 'transferencia'
+}
+{
+  _id: ObjectId('681171c4681d9ed48beeae8f'),
+  codigo: 'V009',
+  cliente: 'Sofía',
+  total: 100,
+  productos: [
+    'falda',
+    'camisa'
+  ],
+  fecha: 2024-04-01T00:00:00.000Z,
+  pagado: false,
+  metodoPago: 'efectivo',
+  detalles: {
+    items: 2,
+    descuento: 0
+  }
+}
+db.Clientes.find({ telefono: { $exists: false } })
+{
+  _id: ObjectId('68117083681d9ed48beeae7e'),
+  nombre: 'Luis',
+  edad: 30,
+  ciudad: 'Barcelona',
+  activo: false,
+  compras: [
+    30
+  ],
+  membresia: {
+    tipo: 'plata',
+    desde: 2023
+  }
+}
+{
+  _id: ObjectId('68117083681d9ed48beeae80'),
+  nombre: 'Lucía',
+  edad: 45,
+  ciudad: 'Sevilla',
+  activo: false,
+  compras: [
+    200,
+    300,
+    400,
+    500
+  ],
+  membresia: {
+    tipo: 'oro',
+    desde: 2020
+  }
+}
+{
+  _id: ObjectId('68117083681d9ed48beeae81'),
+  nombre: 'Pedro',
+  edad: 35,
+  ciudad: 'Valencia',
+  activo: true,
+  compras: [
+    10,
+    20
+  ]
+}
+{
+  _id: ObjectId('68117083681d9ed48beeae83'),
+  nombre: 'Mario',
+  edad: 22,
+  ciudad: 'Bilbao',
+  activo: true,
+  compras: [
+    120,
+    180
+  ]
+}
+{
+  _id: ObjectId('68117083681d9ed48beeae86'),
+  nombre: 'Sofía',
+  edad: 29,
+  ciudad: 'Barcelona',
+  activo: true,
+  compras: [
+    100,
+    150
+  ],
+  membresia: {
+    tipo: 'plata',
+    desde: 2021
+  }
+}
+db.Clientes.find({ edad: { $type: "int" } })
+{
+  _id: ObjectId('68117083681d9ed48beeae7d'),
+  nombre: 'Ana',
+  edad: 25,
+  ciudad: 'Madrid',
+  activo: true,
+  compras: [
+    120,
+    60,
+    90
+  ],
+  membresia: {
+    tipo: 'oro',
+    desde: 2021
+  },
+  telefono: '123456789'
+}
+{
+  _id: ObjectId('68117083681d9ed48beeae7e'),
+  nombre: 'Luis',
+  edad: 30,
+  ciudad: 'Barcelona',
+  activo: false,
+  compras: [
+    30
+  ],
+  membresia: {
+    tipo: 'plata',
+    desde: 2023
+  }
+}
+{
+  _id: ObjectId('68117083681d9ed48beeae7f'),
+  nombre: 'Carlos',
+  edad: 19,
+  ciudad: 'Madrid',
+  activo: true,
+  compras: [],
+  telefono: '987654321'
+}
+{
+  _id: ObjectId('68117083681d9ed48beeae80'),
+  nombre: 'Lucía',
+  edad: 45,
+  ciudad: 'Sevilla',
+  activo: false,
+  compras: [
+    200,
+    300,
+    400,
+    500
+  ],
+  membresia: {
+    tipo: 'oro',
+    desde: 2020
+  }
+}
+{
+  _id: ObjectId('68117083681d9ed48beeae81'),
+  nombre: 'Pedro',
+  edad: 35,
+  ciudad: 'Valencia',
+  activo: true,
+  compras: [
+    10,
+    20
+  ]
+}
+{
+  _id: ObjectId('68117083681d9ed48beeae82'),
+  nombre: 'Elena',
+  edad: 28,
+  ciudad: 'Madrid',
+  activo: false,
+  compras: [
+    99,
+    1
+  ],
+  telefono: '111222333',
+  membresia: {
+    tipo: 'bronce',
+    desde: 2022
+  }
+}
+{
+  _id: ObjectId('68117083681d9ed48beeae83'),
+  nombre: 'Mario',
+  edad: 22,
+  ciudad: 'Bilbao',
+  activo: true,
+  compras: [
+    120,
+    180
+  ]
+}
+{
+  _id: ObjectId('68117083681d9ed48beeae84'),
+  nombre: 'Sara',
+  edad: 50,
+  ciudad: 'Madrid',
+  activo: false,
+  compras: [
+    150,
+    250,
+    350
+  ],
+  membresia: {
+    tipo: 'oro',
+    desde: 2019
+  },
+  telefono: '000111222'
+}
+{
+  _id: ObjectId('68117083681d9ed48beeae85'),
+  nombre: 'Juan',
+  edad: 40,
+  ciudad: 'Valencia',
+  activo: true,
+  compras: [
+    75
+  ],
+  telefono: '333444555'
+}
+{
+  _id: ObjectId('68117083681d9ed48beeae86'),
+  nombre: 'Sofía',
+  edad: 29,
+  ciudad: 'Barcelona',
+  activo: true,
+  compras: [
+    100,
+    150
+  ],
+  membresia: {
+    tipo: 'plata',
+    desde: 2021
+  }
+}
+db.Clientes.find({ edad: { $mod: [5, 0] } })
+{
+  _id: ObjectId('68117083681d9ed48beeae7d'),
+  nombre: 'Ana',
+  edad: 25,
+  ciudad: 'Madrid',
+  activo: true,
+  compras: [
+    120,
+    60,
+    90
+  ],
+  membresia: {
+    tipo: 'oro',
+    desde: 2021
+  },
+  telefono: '123456789'
+}
+{
+  _id: ObjectId('68117083681d9ed48beeae7e'),
+  nombre: 'Luis',
+  edad: 30,
+  ciudad: 'Barcelona',
+  activo: false,
+  compras: [
+    30
+  ],
+  membresia: {
+    tipo: 'plata',
+    desde: 2023
+  }
+}
+{
+  _id: ObjectId('68117083681d9ed48beeae80'),
+  nombre: 'Lucía',
+  edad: 45,
+  ciudad: 'Sevilla',
+  activo: false,
+  compras: [
+    200,
+    300,
+    400,
+    500
+  ],
+  membresia: {
+    tipo: 'oro',
+    desde: 2020
+  }
+}
+{
+  _id: ObjectId('68117083681d9ed48beeae81'),
+  nombre: 'Pedro',
+  edad: 35,
+  ciudad: 'Valencia',
+  activo: true,
+  compras: [
+    10,
+    20
+  ]
+}
+{
+  _id: ObjectId('68117083681d9ed48beeae84'),
+  nombre: 'Sara',
+  edad: 50,
+  ciudad: 'Madrid',
+  activo: false,
+  compras: [
+    150,
+    250,
+    350
+  ],
+  membresia: {
+    tipo: 'oro',
+    desde: 2019
+  },
+  telefono: '000111222'
+}
+{
+  _id: ObjectId('68117083681d9ed48beeae85'),
+  nombre: 'Juan',
+  edad: 40,
+  ciudad: 'Valencia',
+  activo: true,
+  compras: [
+    75
+  ],
+  telefono: '333444555'
+}
+db.Clientes.find({
+  compras: { $elemMatch: { $gt: 100, $lt: 200 } }
+})
+{
+  _id: ObjectId('68117083681d9ed48beeae7d'),
+  nombre: 'Ana',
+  edad: 25,
+  ciudad: 'Madrid',
+  activo: true,
+  compras: [
+    120,
+    60,
+    90
+  ],
+  membresia: {
+    tipo: 'oro',
+    desde: 2021
+  },
+  telefono: '123456789'
+}
+{
+  _id: ObjectId('68117083681d9ed48beeae83'),
+  nombre: 'Mario',
+  edad: 22,
+  ciudad: 'Bilbao',
+  activo: true,
+  compras: [
+    120,
+    180
+  ]
+}
+{
+  _id: ObjectId('68117083681d9ed48beeae84'),
+  nombre: 'Sara',
+  edad: 50,
+  ciudad: 'Madrid',
+  activo: false,
+  compras: [
+    150,
+    250,
+    350
+  ],
+  membresia: {
+    tipo: 'oro',
+    desde: 2019
+  },
+  telefono: '000111222'
+}
+{
+  _id: ObjectId('68117083681d9ed48beeae86'),
+  nombre: 'Sofía',
+  edad: 29,
+  ciudad: 'Barcelona',
+  activo: true,
+  compras: [
+    100,
+    150
+  ],
+  membresia: {
+    tipo: 'plata',
+    desde: 2021
+  }
+}
+db.Clientes.find({ compras: { $size: 2 } })
+{
+  _id: ObjectId('68117083681d9ed48beeae81'),
+  nombre: 'Pedro',
+  edad: 35,
+  ciudad: 'Valencia',
+  activo: true,
+  compras: [
+    10,
+    20
+  ]
+}
+{
+  _id: ObjectId('68117083681d9ed48beeae82'),
+  nombre: 'Elena',
+  edad: 28,
+  ciudad: 'Madrid',
+  activo: false,
+  compras: [
+    99,
+    1
+  ],
+  telefono: '111222333',
+  membresia: {
+    tipo: 'bronce',
+    desde: 2022
+  }
+}
+{
+  _id: ObjectId('68117083681d9ed48beeae83'),
+  nombre: 'Mario',
+  edad: 22,
+  ciudad: 'Bilbao',
+  activo: true,
+  compras: [
+    120,
+    180
+  ]
+}
+{
+  _id: ObjectId('68117083681d9ed48beeae86'),
+  nombre: 'Sofía',
+  edad: 29,
+  ciudad: 'Barcelona',
+  activo: true,
+  compras: [
+    100,
+    150
+  ],
+  membresia: {
+    tipo: 'plata',
+    desde: 2021
+  }
+}
+tienda
+
+
+
+
+
+
