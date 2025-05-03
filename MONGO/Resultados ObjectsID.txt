@@ -1,0 +1,3262 @@
+use tienda
+switched to db tienda
+db.productos.find()
+{
+  _id: ObjectId('680fce87a8c40f190ff1fd82'),
+  nombre: 'Laptop',
+  precio: 5000000,
+  cantidad: 10
+}
+{
+  _id: ObjectId('680fcfbea8c40f190ff1fd83'),
+  nombre: 'Mouse',
+  precio: 6000,
+  cantidad: 15,
+  enOferta: true
+}
+{
+  _id: ObjectId('680fcff7a8c40f190ff1fd84'),
+  nombre: 'Mouse',
+  precio: 6000,
+  cantidad: 15,
+  enOferta: true
+}
+db.Clientes.find()
+{
+  _id: ObjectId('68117083681d9ed48beeae7d'),
+  nombre: 'Ana',
+  edad: 25,
+  ciudad: 'Madrid',
+  activo: true,
+  compras: [
+    120,
+    60,
+    90
+  ],
+  membresia: {
+    tipo: 'oro',
+    desde: 2021
+  },
+  telefono: '123456789'
+}
+{
+  _id: ObjectId('68117083681d9ed48beeae7f'),
+  nombre: 'Carlos',
+  edad: 19,
+  ciudad: 'Madrid',
+  activo: true,
+  compras: [],
+  telefono: '987654321'
+}
+{
+  _id: ObjectId('68117083681d9ed48beeae80'),
+  nombre: 'Lucía',
+  edad: 45,
+  ciudad: 'Sevilla',
+  activo: false,
+  compras: [
+    200,
+    300,
+    400,
+    500
+  ],
+  membresia: {
+    tipo: 'oro',
+    desde: 2020
+  }
+}
+{
+  _id: ObjectId('68117083681d9ed48beeae81'),
+  nombre: 'Pedro',
+  edad: 35,
+  ciudad: 'Valencia',
+  activo: true,
+  compras: [
+    10,
+    20
+  ]
+}
+{
+  _id: ObjectId('68117083681d9ed48beeae82'),
+  nombre: 'Elena',
+  edad: 28,
+  ciudad: 'Madrid',
+  activo: false,
+  compras: [
+    99,
+    1
+  ],
+  telefono: '111222333',
+  membresia: {
+    tipo: 'bronce',
+    desde: 2022
+  }
+}
+{
+  _id: ObjectId('68117083681d9ed48beeae83'),
+  nombre: 'Mario',
+  edad: 22,
+  ciudad: 'Bilbao',
+  activo: true,
+  compras: [
+    120,
+    180
+  ]
+}
+{
+  _id: ObjectId('68117083681d9ed48beeae84'),
+  nombre: 'Sara',
+  edad: 50,
+  ciudad: 'Madrid',
+  activo: false,
+  compras: [
+    150,
+    250,
+    350
+  ],
+  membresia: {
+    tipo: 'oro',
+    desde: 2019
+  },
+  telefono: '000111222'
+}
+db.ventas.find()
+{
+  _id: ObjectId('681171c4681d9ed48beeae87'),
+  codigo: 'V001',
+  cliente: 'Ana',
+  total: 120,
+  productos: [
+    'camisa',
+    'pantalón'
+  ],
+  fecha: 2024-01-10T00:00:00.000Z,
+  pagado: true,
+  metodoPago: 'tarjeta',
+  detalles: {
+    items: 2,
+    descuento: 10
+  }
+}
+{
+  _id: ObjectId('681171c4681d9ed48beeae88'),
+  codigo: 'V002',
+  cliente: 'Luis',
+  total: 30,
+  productos: [
+    'gorro'
+  ],
+  fecha: 2024-01-12T00:00:00.000Z,
+  pagado: false,
+  metodoPago: 'efectivo',
+  detalles: {
+    items: 1,
+    descuento: 0
+  }
+}
+{
+  _id: ObjectId('681171c4681d9ed48beeae89'),
+  codigo: 'V003',
+  cliente: 'Lucía',
+  total: 400,
+  productos: [
+    'chaqueta',
+    'zapatos',
+    'camisa'
+  ],
+  fecha: 2024-01-15T00:00:00.000Z,
+  pagado: true,
+  metodoPago: 'tarjeta',
+  detalles: {
+    items: 3,
+    descuento: 20
+  }
+}
+{
+  _id: ObjectId('681171c4681d9ed48beeae8a'),
+  codigo: 'V004',
+  cliente: 'Pedro',
+  total: 50,
+  productos: [
+    'camiseta'
+  ],
+  fecha: 2024-02-01T00:00:00.000Z,
+  pagado: false,
+  metodoPago: 'efectivo'
+}
+{
+  _id: ObjectId('681171c4681d9ed48beeae8b'),
+  codigo: 'V005',
+  cliente: 'Carlos',
+  total: 90,
+  productos: [],
+  fecha: 2024-02-05T00:00:00.000Z,
+  pagado: true,
+  metodoPago: 'tarjeta',
+  detalles: {
+    items: 0,
+    descuento: 0
+  }
+}
+{
+  _id: ObjectId('681171c4681d9ed48beeae8c'),
+  codigo: 'V006',
+  cliente: 'Elena',
+  total: 180,
+  productos: [
+    'vestido',
+    'zapatos'
+  ],
+  fecha: 2024-02-10T00:00:00.000Z,
+  pagado: true,
+  metodoPago: 'efectivo',
+  detalles: {
+    items: 2,
+    descuento: 5
+  }
+}
+{
+  _id: ObjectId('681171c4681d9ed48beeae8d'),
+  codigo: 'V007',
+  cliente: 'Sara',
+  total: 250,
+  productos: [
+    'abrigo',
+    'bolso',
+    'bufanda'
+  ],
+  fecha: 2024-03-01T00:00:00.000Z,
+  pagado: false,
+  metodoPago: 'tarjeta',
+  detalles: {
+    items: 3,
+    descuento: 15
+  }
+}
+{
+  _id: ObjectId('681171c4681d9ed48beeae8e'),
+  codigo: 'V008',
+  cliente: 'Mario',
+  total: 75,
+  productos: [
+    'pantalón'
+  ],
+  fecha: 2024-03-10T00:00:00.000Z,
+  pagado: true,
+  metodoPago: 'transferencia'
+}
+{
+  _id: ObjectId('681171c4681d9ed48beeae8f'),
+  codigo: 'V009',
+  cliente: 'Sofía',
+  total: 100,
+  productos: [
+    'falda',
+    'camisa'
+  ],
+  fecha: 2024-04-01T00:00:00.000Z,
+  pagado: false,
+  metodoPago: 'efectivo',
+  detalles: {
+    items: 2,
+    descuento: 0
+  }
+}
+{
+  _id: ObjectId('681171c4681d9ed48beeae90'),
+  codigo: 'V010',
+  cliente: 'Juan',
+  total: 300,
+  productos: [
+    'chaqueta',
+    'botas',
+    'bufanda'
+  ],
+  fecha: 2024-04-15T00:00:00.000Z,
+  pagado: true,
+  metodoPago: 'tarjeta'
+}
+db.productos.find()
+{
+  _id: ObjectId('680fce87a8c40f190ff1fd82'),
+  nombre: 'Laptop',
+  precio: 5000000,
+  cantidad: 10
+}
+{
+  _id: ObjectId('680fcfbea8c40f190ff1fd83'),
+  nombre: 'Mouse',
+  precio: 6000,
+  cantidad: 15,
+  enOferta: true
+}
+{
+  _id: ObjectId('680fcff7a8c40f190ff1fd84'),
+  nombre: 'Mouse',
+  precio: 6000,
+  cantidad: 15,
+  enOferta: true
+}
+db.productos.insertMany([
+  { nombre: "camisa", precio: 30000, cantidad: 50, enOferta: true },
+  { nombre: "pantalon", precio: 60000, cantidad: 40, enOferta: true },
+  { nombre: "gorro", precio: 15000, cantidad: 70, enOferta: true },
+  { nombre: "chaqueta", precio: 80000, cantidad: 30, enOferta: true },
+  { nombre: "zapatos", precio: 90000, cantidad: 25, enOferta: true },
+  { nombre: "camiseta", precio: 25000, cantidad: 60, enOferta: true },
+  { nombre: "vestido", precio: 70000, cantidad: 35, enOferta: true },
+  { nombre: "abrigo", precio: 95000, cantidad: 20, enOferta: true },
+  { nombre: "bolso", precio: 40000, cantidad: 45, enOferta: true },
+  { nombre: "bufanda", precio: 20000, cantidad: 55, enOferta: true },
+  { nombre: "falda", precio: 50000, cantidad: 30, enOferta: true },
+  { nombre: "botas", precio: 85000, cantidad: 22, enOferta: true }
+])
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId('68169497403b6ffd51905165'),
+    '1': ObjectId('68169497403b6ffd51905166'),
+    '2': ObjectId('68169497403b6ffd51905167'),
+    '3': ObjectId('68169497403b6ffd51905168'),
+    '4': ObjectId('68169497403b6ffd51905169'),
+    '5': ObjectId('68169497403b6ffd5190516a'),
+    '6': ObjectId('68169497403b6ffd5190516b'),
+    '7': ObjectId('68169497403b6ffd5190516c'),
+    '8': ObjectId('68169497403b6ffd5190516d'),
+    '9': ObjectId('68169497403b6ffd5190516e'),
+    '10': ObjectId('68169497403b6ffd5190516f'),
+    '11': ObjectId('68169497403b6ffd51905170')
+  }
+}
+db.productos.find()
+{
+  _id: ObjectId('680fce87a8c40f190ff1fd82'),
+  nombre: 'Laptop',
+  precio: 5000000,
+  cantidad: 10
+}
+{
+  _id: ObjectId('680fcfbea8c40f190ff1fd83'),
+  nombre: 'Mouse',
+  precio: 6000,
+  cantidad: 15,
+  enOferta: true
+}
+{
+  _id: ObjectId('680fcff7a8c40f190ff1fd84'),
+  nombre: 'Mouse',
+  precio: 6000,
+  cantidad: 15,
+  enOferta: true
+}
+{
+  _id: ObjectId('68169497403b6ffd51905165'),
+  nombre: 'camisa',
+  precio: 30000,
+  cantidad: 50,
+  enOferta: true
+}
+{
+  _id: ObjectId('68169497403b6ffd51905166'),
+  nombre: 'pantalon',
+  precio: 60000,
+  cantidad: 40,
+  enOferta: true
+}
+{
+  _id: ObjectId('68169497403b6ffd51905167'),
+  nombre: 'gorro',
+  precio: 15000,
+  cantidad: 70,
+  enOferta: true
+}
+{
+  _id: ObjectId('68169497403b6ffd51905168'),
+  nombre: 'chaqueta',
+  precio: 80000,
+  cantidad: 30,
+  enOferta: true
+}
+{
+  _id: ObjectId('68169497403b6ffd51905169'),
+  nombre: 'zapatos',
+  precio: 90000,
+  cantidad: 25,
+  enOferta: true
+}
+{
+  _id: ObjectId('68169497403b6ffd5190516a'),
+  nombre: 'camiseta',
+  precio: 25000,
+  cantidad: 60,
+  enOferta: true
+}
+{
+  _id: ObjectId('68169497403b6ffd5190516b'),
+  nombre: 'vestido',
+  precio: 70000,
+  cantidad: 35,
+  enOferta: true
+}
+{
+  _id: ObjectId('68169497403b6ffd5190516c'),
+  nombre: 'abrigo',
+  precio: 95000,
+  cantidad: 20,
+  enOferta: true
+}
+{
+  _id: ObjectId('68169497403b6ffd5190516d'),
+  nombre: 'bolso',
+  precio: 40000,
+  cantidad: 45,
+  enOferta: true
+}
+{
+  _id: ObjectId('68169497403b6ffd5190516e'),
+  nombre: 'bufanda',
+  precio: 20000,
+  cantidad: 55,
+  enOferta: true
+}
+{
+  _id: ObjectId('68169497403b6ffd5190516f'),
+  nombre: 'falda',
+  precio: 50000,
+  cantidad: 30,
+  enOferta: true
+}
+{
+  _id: ObjectId('68169497403b6ffd51905170'),
+  nombre: 'botas',
+  precio: 85000,
+  cantidad: 22,
+  enOferta: true
+}
+db.ventas.drop()
+true
+db.createCollection("ventas")
+{ ok: 1 }
+const clienteAna = db.clientes.findOne({ nombre: "Ana" })._id;
+const camisa = db.productos.findOne({ nombre: "camisa" })._id;
+const pantalon = db.productos.findOne({ nombre: "pantalón" })._id;
+TypeError: Cannot read properties of null (reading '_id')
+db.clientes.find().pretty()
+db.productos.find().pretty()
+{
+  _id: ObjectId('680fce87a8c40f190ff1fd82'),
+  nombre: 'Laptop',
+  precio: 5000000,
+  cantidad: 10
+}
+{
+  _id: ObjectId('680fcfbea8c40f190ff1fd83'),
+  nombre: 'Mouse',
+  precio: 6000,
+  cantidad: 15,
+  enOferta: true
+}
+{
+  _id: ObjectId('680fcff7a8c40f190ff1fd84'),
+  nombre: 'Mouse',
+  precio: 6000,
+  cantidad: 15,
+  enOferta: true
+}
+{
+  _id: ObjectId('68169497403b6ffd51905165'),
+  nombre: 'camisa',
+  precio: 30000,
+  cantidad: 50,
+  enOferta: true
+}
+{
+  _id: ObjectId('68169497403b6ffd51905166'),
+  nombre: 'pantalon',
+  precio: 60000,
+  cantidad: 40,
+  enOferta: true
+}
+{
+  _id: ObjectId('68169497403b6ffd51905167'),
+  nombre: 'gorro',
+  precio: 15000,
+  cantidad: 70,
+  enOferta: true
+}
+{
+  _id: ObjectId('68169497403b6ffd51905168'),
+  nombre: 'chaqueta',
+  precio: 80000,
+  cantidad: 30,
+  enOferta: true
+}
+{
+  _id: ObjectId('68169497403b6ffd51905169'),
+  nombre: 'zapatos',
+  precio: 90000,
+  cantidad: 25,
+  enOferta: true
+}
+{
+  _id: ObjectId('68169497403b6ffd5190516a'),
+  nombre: 'camiseta',
+  precio: 25000,
+  cantidad: 60,
+  enOferta: true
+}
+{
+  _id: ObjectId('68169497403b6ffd5190516b'),
+  nombre: 'vestido',
+  precio: 70000,
+  cantidad: 35,
+  enOferta: true
+}
+{
+  _id: ObjectId('68169497403b6ffd5190516c'),
+  nombre: 'abrigo',
+  precio: 95000,
+  cantidad: 20,
+  enOferta: true
+}
+{
+  _id: ObjectId('68169497403b6ffd5190516d'),
+  nombre: 'bolso',
+  precio: 40000,
+  cantidad: 45,
+  enOferta: true
+}
+{
+  _id: ObjectId('68169497403b6ffd5190516e'),
+  nombre: 'bufanda',
+  precio: 20000,
+  cantidad: 55,
+  enOferta: true
+}
+{
+  _id: ObjectId('68169497403b6ffd5190516f'),
+  nombre: 'falda',
+  precio: 50000,
+  cantidad: 30,
+  enOferta: true
+}
+{
+  _id: ObjectId('68169497403b6ffd51905170'),
+  nombre: 'botas',
+  precio: 85000,
+  cantidad: 22,
+  enOferta: true
+}
+const clienteAna = db.clientes.findOne({ nombre: "Ana" })._id;
+TypeError: Cannot read properties of null (reading '_id')
+db.clientes.find().pretty()
+db.Clientes.find().pretty()
+{
+  _id: ObjectId('68117083681d9ed48beeae7d'),
+  nombre: 'Ana',
+  edad: 25,
+  ciudad: 'Madrid',
+  activo: true,
+  compras: [
+    120,
+    60,
+    90
+  ],
+  membresia: {
+    tipo: 'oro',
+    desde: 2021
+  },
+  telefono: '123456789'
+}
+{
+  _id: ObjectId('68117083681d9ed48beeae7f'),
+  nombre: 'Carlos',
+  edad: 19,
+  ciudad: 'Madrid',
+  activo: true,
+  compras: [],
+  telefono: '987654321'
+}
+{
+  _id: ObjectId('68117083681d9ed48beeae80'),
+  nombre: 'Lucía',
+  edad: 45,
+  ciudad: 'Sevilla',
+  activo: false,
+  compras: [
+    200,
+    300,
+    400,
+    500
+  ],
+  membresia: {
+    tipo: 'oro',
+    desde: 2020
+  }
+}
+{
+  _id: ObjectId('68117083681d9ed48beeae81'),
+  nombre: 'Pedro',
+  edad: 35,
+  ciudad: 'Valencia',
+  activo: true,
+  compras: [
+    10,
+    20
+  ]
+}
+{
+  _id: ObjectId('68117083681d9ed48beeae82'),
+  nombre: 'Elena',
+  edad: 28,
+  ciudad: 'Madrid',
+  activo: false,
+  compras: [
+    99,
+    1
+  ],
+  telefono: '111222333',
+  membresia: {
+    tipo: 'bronce',
+    desde: 2022
+  }
+}
+{
+  _id: ObjectId('68117083681d9ed48beeae83'),
+  nombre: 'Mario',
+  edad: 22,
+  ciudad: 'Bilbao',
+  activo: true,
+  compras: [
+    120,
+    180
+  ]
+}
+{
+  _id: ObjectId('68117083681d9ed48beeae84'),
+  nombre: 'Sara',
+  edad: 50,
+  ciudad: 'Madrid',
+  activo: false,
+  compras: [
+    150,
+    250,
+    350
+  ],
+  membresia: {
+    tipo: 'oro',
+    desde: 2019
+  },
+  telefono: '000111222'
+}
+const clienteAna = db.clientes.findOne({ nombre: "Ana" });
+const clienteCarlos = db.clientes.findOne({ nombre: "Carlos" });
+const clienteLucia = db.clientes.findOne({ nombre: "Lucía" });
+const clientePedro = db.clientes.findOne({ nombre: "Pedro" });
+const clienteElena = db.clientes.findOne({ nombre: "Elena" });
+const clienteMario = db.clientes.findOne({ nombre: "Mario" });
+const clienteSara = db.clientes.findOne({ nombre: "Sara" });
+db.clientes.find().pretty()
+db.productos.find().pretty()
+{
+  _id: ObjectId('680fce87a8c40f190ff1fd82'),
+  nombre: 'Laptop',
+  precio: 5000000,
+  cantidad: 10
+}
+{
+  _id: ObjectId('680fcfbea8c40f190ff1fd83'),
+  nombre: 'Mouse',
+  precio: 6000,
+  cantidad: 15,
+  enOferta: true
+}
+{
+  _id: ObjectId('680fcff7a8c40f190ff1fd84'),
+  nombre: 'Mouse',
+  precio: 6000,
+  cantidad: 15,
+  enOferta: true
+}
+{
+  _id: ObjectId('68169497403b6ffd51905165'),
+  nombre: 'camisa',
+  precio: 30000,
+  cantidad: 50,
+  enOferta: true
+}
+{
+  _id: ObjectId('68169497403b6ffd51905166'),
+  nombre: 'pantalon',
+  precio: 60000,
+  cantidad: 40,
+  enOferta: true
+}
+{
+  _id: ObjectId('68169497403b6ffd51905167'),
+  nombre: 'gorro',
+  precio: 15000,
+  cantidad: 70,
+  enOferta: true
+}
+{
+  _id: ObjectId('68169497403b6ffd51905168'),
+  nombre: 'chaqueta',
+  precio: 80000,
+  cantidad: 30,
+  enOferta: true
+}
+{
+  _id: ObjectId('68169497403b6ffd51905169'),
+  nombre: 'zapatos',
+  precio: 90000,
+  cantidad: 25,
+  enOferta: true
+}
+{
+  _id: ObjectId('68169497403b6ffd5190516a'),
+  nombre: 'camiseta',
+  precio: 25000,
+  cantidad: 60,
+  enOferta: true
+}
+{
+  _id: ObjectId('68169497403b6ffd5190516b'),
+  nombre: 'vestido',
+  precio: 70000,
+  cantidad: 35,
+  enOferta: true
+}
+{
+  _id: ObjectId('68169497403b6ffd5190516c'),
+  nombre: 'abrigo',
+  precio: 95000,
+  cantidad: 20,
+  enOferta: true
+}
+{
+  _id: ObjectId('68169497403b6ffd5190516d'),
+  nombre: 'bolso',
+  precio: 40000,
+  cantidad: 45,
+  enOferta: true
+}
+{
+  _id: ObjectId('68169497403b6ffd5190516e'),
+  nombre: 'bufanda',
+  precio: 20000,
+  cantidad: 55,
+  enOferta: true
+}
+{
+  _id: ObjectId('68169497403b6ffd5190516f'),
+  nombre: 'falda',
+  precio: 50000,
+  cantidad: 30,
+  enOferta: true
+}
+{
+  _id: ObjectId('68169497403b6ffd51905170'),
+  nombre: 'botas',
+  precio: 85000,
+  cantidad: 22,
+  enOferta: true
+}
+const camisa = db.productos.findOne({ nombre: "camisa" })
+const pantalon = db.productos.findOne({ nombre: "pantalon" })
+const gorro = db.productos.findOne({ nombre: "gorro" })
+const chaqueta = db.productos.findOne({ nombre: "chaqueta" })
+const zapatos = db.productos.findOne({ nombre: "zapatos" })
+const camiseta = db.productos.findOne({ nombre: "camiseta" })
+const vestido = db.productos.findOne({ nombre: "vestido" })
+const abrigo = db.productos.findOne({ nombre: "abrigo" })
+const bolso = db.productos.findOne({ nombre: "bolso" })
+const bufanda = db.productos.findOne({ nombre: "bufanda" })
+const falda = db.productos.findOne({ nombre: "falda" })
+const botas = db.productos.findOne({ nombre: "botas" })
+db.ventas.insertMany([
+  {
+    codigo: "V001",
+    cliente: clienteAna._id,
+    productos: [camisa._id, pantalon._id],
+    total: 120,
+    fecha: new Date("2024-01-10"),
+    pagado: true,
+    metodoPago: "tarjeta",
+    detalles: { items: 2, descuento: 10 }
+  },
+  {
+    codigo: "V002",
+    cliente: db.clientes.findOne({ nombre: "Luis" })._id,
+    productos: [gorro._id],
+    total: 30,
+    fecha: new Date("2024-01-12"),
+    pagado: false,
+    metodoPago: "efectivo",
+    detalles: { items: 1, descuento: 0 }
+  },
+  {
+    codigo: "V003",
+    cliente: clienteLucia._id,
+    productos: [chaqueta._id, zapatos._id, camisa._id],
+    total: 400,
+    fecha: new Date("2024-01-15"),
+    pagado: true,
+    metodoPago: "tarjeta",
+    detalles: { items: 3, descuento: 20 }
+  },
+  {
+    codigo: "V004",
+    cliente: clientePedro._id,
+    productos: [camiseta._id],
+    total: 50,
+    fecha: new Date("2024-02-01"),
+    pagado: false,
+    metodoPago: "efectivo"
+  },
+  {
+    codigo: "V005",
+    cliente: clienteCarlos._id,
+    productos: [],
+    total: 90,
+    fecha: new Date("2024-02-05"),
+    pagado: true,
+    metodoPago: "tarjeta",
+    detalles: { items: 0, descuento: 0 }
+  },
+  {
+    codigo: "V006",
+    cliente: clienteElena._id,
+    productos: [vestido._id, zapatos._id],
+    total: 180,
+    fecha: new Date("2024-02-10"),
+    pagado: true,
+    metodoPago: "efectivo",
+    detalles: { items: 2, descuento: 5 }
+  },
+  {
+    codigo: "V007",
+    cliente: clienteSara._id,
+    productos: [abrigo._id, bolso._id, bufanda._id],
+    total: 250,
+    fecha: new Date("2024-03-01"),
+    pagado: false,
+    metodoPago: "tarjeta",
+    detalles: { items: 3, descuento: 15 }
+  },
+  {
+    codigo: "V008",
+    cliente: clienteMario._id,
+    productos: [pantalon._id],
+    total: 75,
+    fecha: new Date("2024-03-10"),
+    pagado: true,
+    metodoPago: "transferencia"
+  },
+  {
+    codigo: "V009",
+    cliente: db.clientes.findOne({ nombre: "Sofía" })._id,
+    productos: [falda._id, camisa._id],
+    total: 100,
+    fecha: new Date("2024-04-01"),
+    pagado: false,
+    metodoPago: "efectivo",
+    detalles: { items: 2, descuento: 0 }
+  },
+  {
+    codigo: "V010",
+    cliente: db.clientes.findOne({ nombre: "Juan" })._id,
+    productos: [chaqueta._id, botas._id, bufanda._id],
+    total: 300,
+    fecha: new Date("2024-04-15"),
+    pagado: true,
+    metodoPago: "tarjeta"
+  }
+])
+TypeError: Cannot read properties of null (reading '_id')
+db.ventas.insertMany([
+  {
+    codigo: "V001",
+    cliente: clienteAna,
+    productos: [camisa, pantalon],
+    total: 120,
+    fecha: new Date("2024-01-10"),
+    pagado: true,
+    metodoPago: "tarjeta",
+    detalles: { items: 2, descuento: 10 }
+  },
+  {
+    codigo: "V002",
+    cliente: clienteLuis,
+    productos: [gorro],
+    total: 30,
+    fecha: new Date("2024-01-12"),
+    pagado: false,
+    metodoPago: "efectivo",
+    detalles: { items: 1, descuento: 0 }
+  },
+  {
+    codigo: "V003",
+    cliente: clienteLucia,
+    productos: [chaqueta, zapatos, camisa],
+    total: 400,
+    fecha: new Date("2024-01-15"),
+    pagado: true,
+    metodoPago: "tarjeta",
+    detalles: { items: 3, descuento: 20 }
+  },
+  {
+    codigo: "V004",
+    cliente: clientePedro,
+    productos: [camiseta],
+    total: 50,
+    fecha: new Date("2024-02-01"),
+    pagado: false,
+    metodoPago: "efectivo"
+  },
+  {
+    codigo: "V005",
+    cliente: clienteCarlos,
+    productos: [],
+    total: 90,
+    fecha: new Date("2024-02-05"),
+    pagado: true,
+    metodoPago: "tarjeta",
+    detalles: { items: 0, descuento: 0 }
+  },
+  {
+    codigo: "V006",
+    cliente: clienteElena,
+    productos: [vestido, zapatos],
+    total: 180,
+    fecha: new Date("2024-02-10"),
+    pagado: true,
+    metodoPago: "efectivo",
+    detalles: { items: 2, descuento: 5 }
+  },
+  {
+    codigo: "V007",
+    cliente: clienteSara,
+    productos: [abrigo, bolso, bufanda],
+    total: 250,
+    fecha: new Date("2024-03-01"),
+    pagado: false,
+    metodoPago: "tarjeta",
+    detalles: { items: 3, descuento: 15 }
+  },
+  {
+    codigo: "V008",
+    cliente: clienteMario,
+    productos: [pantalon],
+    total: 75,
+    fecha: new Date("2024-03-10"),
+    pagado: true,
+    metodoPago: "transferencia"
+  },
+  {
+    codigo: "V009",
+    cliente: clienteSofia,
+    productos: [falda, camisa],
+    total: 100,
+    fecha: new Date("2024-04-01"),
+    pagado: false,
+    metodoPago: "efectivo",
+    detalles: { items: 2, descuento: 0 }
+  },
+  {
+    codigo: "V010",
+    cliente: clienteJuan,
+    productos: [chaqueta, botas, bufanda],
+    total: 300,
+    fecha: new Date("2024-04-15"),
+    pagado: true,
+    metodoPago: "tarjeta"
+  }
+])
+ReferenceError: clienteLuis is not defined
+const clienteLuis = db.clientes.findOne({ nombre: "Luis" });
+db.ventas.insertMany([
+  {
+    codigo: "V001",
+    cliente: clienteAna,
+    productos: [camisa, pantalon],
+    total: 120,
+    fecha: new Date("2024-01-10"),
+    pagado: true,
+    metodoPago: "tarjeta",
+    detalles: { items: 2, descuento: 10 }
+  },
+  {
+    codigo: "V002",
+    cliente: clienteLuis,
+    productos: [gorro],
+    total: 30,
+    fecha: new Date("2024-01-12"),
+    pagado: false,
+    metodoPago: "efectivo",
+    detalles: { items: 1, descuento: 0 }
+  },
+  {
+    codigo: "V003",
+    cliente: clienteLucia,
+    productos: [chaqueta, zapatos, camisa],
+    total: 400,
+    fecha: new Date("2024-01-15"),
+    pagado: true,
+    metodoPago: "tarjeta",
+    detalles: { items: 3, descuento: 20 }
+  },
+  {
+    codigo: "V004",
+    cliente: clientePedro,
+    productos: [camiseta],
+    total: 50,
+    fecha: new Date("2024-02-01"),
+    pagado: false,
+    metodoPago: "efectivo"
+  },
+  {
+    codigo: "V005",
+    cliente: clienteCarlos,
+    productos: [],
+    total: 90,
+    fecha: new Date("2024-02-05"),
+    pagado: true,
+    metodoPago: "tarjeta",
+    detalles: { items: 0, descuento: 0 }
+  },
+  {
+    codigo: "V006",
+    cliente: clienteElena,
+    productos: [vestido, zapatos],
+    total: 180,
+    fecha: new Date("2024-02-10"),
+    pagado: true,
+    metodoPago: "efectivo",
+    detalles: { items: 2, descuento: 5 }
+  },
+  {
+    codigo: "V007",
+    cliente: clienteSara,
+    productos: [abrigo, bolso, bufanda],
+    total: 250,
+    fecha: new Date("2024-03-01"),
+    pagado: false,
+    metodoPago: "tarjeta",
+    detalles: { items: 3, descuento: 15 }
+  },
+  {
+    codigo: "V008",
+    cliente: clienteMario,
+    productos: [pantalon],
+    total: 75,
+    fecha: new Date("2024-03-10"),
+    pagado: true,
+    metodoPago: "transferencia"
+  },
+  {
+    codigo: "V009",
+    cliente: clienteSofia,
+    productos: [falda, camisa],
+    total: 100,
+    fecha: new Date("2024-04-01"),
+    pagado: false,
+    metodoPago: "efectivo",
+    detalles: { items: 2, descuento: 0 }
+  },
+  {
+    codigo: "V010",
+    cliente: clienteJuan,
+    productos: [chaqueta, botas, bufanda],
+    total: 300,
+    fecha: new Date("2024-04-15"),
+    pagado: true,
+    metodoPago: "tarjeta"
+  }
+])
+ReferenceError: clienteSofia is not defined
+const clienteSofia = db.clientes.findOne({ nombre: "Sofia" });
+db.ventas.insertMany([
+  {
+    codigo: "V001",
+    cliente: clienteAna,
+    productos: [camisa, pantalon],
+    total: 120,
+    fecha: new Date("2024-01-10"),
+    pagado: true,
+    metodoPago: "tarjeta",
+    detalles: { items: 2, descuento: 10 }
+  },
+  {
+    codigo: "V002",
+    cliente: clienteLuis,
+    productos: [gorro],
+    total: 30,
+    fecha: new Date("2024-01-12"),
+    pagado: false,
+    metodoPago: "efectivo",
+    detalles: { items: 1, descuento: 0 }
+  },
+  {
+    codigo: "V003",
+    cliente: clienteLucia,
+    productos: [chaqueta, zapatos, camisa],
+    total: 400,
+    fecha: new Date("2024-01-15"),
+    pagado: true,
+    metodoPago: "tarjeta",
+    detalles: { items: 3, descuento: 20 }
+  },
+  {
+    codigo: "V004",
+    cliente: clientePedro,
+    productos: [camiseta],
+    total: 50,
+    fecha: new Date("2024-02-01"),
+    pagado: false,
+    metodoPago: "efectivo"
+  },
+  {
+    codigo: "V005",
+    cliente: clienteCarlos,
+    productos: [],
+    total: 90,
+    fecha: new Date("2024-02-05"),
+    pagado: true,
+    metodoPago: "tarjeta",
+    detalles: { items: 0, descuento: 0 }
+  },
+  {
+    codigo: "V006",
+    cliente: clienteElena,
+    productos: [vestido, zapatos],
+    total: 180,
+    fecha: new Date("2024-02-10"),
+    pagado: true,
+    metodoPago: "efectivo",
+    detalles: { items: 2, descuento: 5 }
+  },
+  {
+    codigo: "V007",
+    cliente: clienteSara,
+    productos: [abrigo, bolso, bufanda],
+    total: 250,
+    fecha: new Date("2024-03-01"),
+    pagado: false,
+    metodoPago: "tarjeta",
+    detalles: { items: 3, descuento: 15 }
+  },
+  {
+    codigo: "V008",
+    cliente: clienteMario,
+    productos: [pantalon],
+    total: 75,
+    fecha: new Date("2024-03-10"),
+    pagado: true,
+    metodoPago: "transferencia"
+  },
+  {
+    codigo: "V009",
+    cliente: clienteSofia,
+    productos: [falda, camisa],
+    total: 100,
+    fecha: new Date("2024-04-01"),
+    pagado: false,
+    metodoPago: "efectivo",
+    detalles: { items: 2, descuento: 0 }
+  },
+  {
+    codigo: "V010",
+    cliente: clienteJuan,
+    productos: [chaqueta, botas, bufanda],
+    total: 300,
+    fecha: new Date("2024-04-15"),
+    pagado: true,
+    metodoPago: "tarjeta"
+  }
+])
+ReferenceError: clienteJuan is not defined
+const clienteJuan = db.clientes.findOne({ nombre: "Juan" });
+db.ventas.insertMany([
+  {
+    codigo: "V001",
+    cliente: clienteAna,
+    productos: [camisa, pantalon],
+    total: 120,
+    fecha: new Date("2024-01-10"),
+    pagado: true,
+    metodoPago: "tarjeta",
+    detalles: { items: 2, descuento: 10 }
+  },
+  {
+    codigo: "V002",
+    cliente: clienteLuis,
+    productos: [gorro],
+    total: 30,
+    fecha: new Date("2024-01-12"),
+    pagado: false,
+    metodoPago: "efectivo",
+    detalles: { items: 1, descuento: 0 }
+  },
+  {
+    codigo: "V003",
+    cliente: clienteLucia,
+    productos: [chaqueta, zapatos, camisa],
+    total: 400,
+    fecha: new Date("2024-01-15"),
+    pagado: true,
+    metodoPago: "tarjeta",
+    detalles: { items: 3, descuento: 20 }
+  },
+  {
+    codigo: "V004",
+    cliente: clientePedro,
+    productos: [camiseta],
+    total: 50,
+    fecha: new Date("2024-02-01"),
+    pagado: false,
+    metodoPago: "efectivo"
+  },
+  {
+    codigo: "V005",
+    cliente: clienteCarlos,
+    productos: [],
+    total: 90,
+    fecha: new Date("2024-02-05"),
+    pagado: true,
+    metodoPago: "tarjeta",
+    detalles: { items: 0, descuento: 0 }
+  },
+  {
+    codigo: "V006",
+    cliente: clienteElena,
+    productos: [vestido, zapatos],
+    total: 180,
+    fecha: new Date("2024-02-10"),
+    pagado: true,
+    metodoPago: "efectivo",
+    detalles: { items: 2, descuento: 5 }
+  },
+  {
+    codigo: "V007",
+    cliente: clienteSara,
+    productos: [abrigo, bolso, bufanda],
+    total: 250,
+    fecha: new Date("2024-03-01"),
+    pagado: false,
+    metodoPago: "tarjeta",
+    detalles: { items: 3, descuento: 15 }
+  },
+  {
+    codigo: "V008",
+    cliente: clienteMario,
+    productos: [pantalon],
+    total: 75,
+    fecha: new Date("2024-03-10"),
+    pagado: true,
+    metodoPago: "transferencia"
+  },
+  {
+    codigo: "V009",
+    cliente: clienteSofia,
+    productos: [falda, camisa],
+    total: 100,
+    fecha: new Date("2024-04-01"),
+    pagado: false,
+    metodoPago: "efectivo",
+    detalles: { items: 2, descuento: 0 }
+  },
+  {
+    codigo: "V010",
+    cliente: clienteJuan,
+    productos: [chaqueta, botas, bufanda],
+    total: 300,
+    fecha: new Date("2024-04-15"),
+    pagado: true,
+    metodoPago: "tarjeta"
+  }
+])
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId('68169b28403b6ffd51905171'),
+    '1': ObjectId('68169b28403b6ffd51905172'),
+    '2': ObjectId('68169b28403b6ffd51905173'),
+    '3': ObjectId('68169b28403b6ffd51905174'),
+    '4': ObjectId('68169b28403b6ffd51905175'),
+    '5': ObjectId('68169b28403b6ffd51905176'),
+    '6': ObjectId('68169b28403b6ffd51905177'),
+    '7': ObjectId('68169b28403b6ffd51905178'),
+    '8': ObjectId('68169b28403b6ffd51905179'),
+    '9': ObjectId('68169b28403b6ffd5190517a')
+  }
+}
+db.ventas.find()
+{
+  _id: ObjectId('68169b28403b6ffd51905171'),
+  codigo: 'V001',
+  cliente: null,
+  productos: [
+    {
+      _id: ObjectId('68169497403b6ffd51905165'),
+      nombre: 'camisa',
+      precio: 30000,
+      cantidad: 50,
+      enOferta: true
+    },
+    {
+      _id: ObjectId('68169497403b6ffd51905166'),
+      nombre: 'pantalon',
+      precio: 60000,
+      cantidad: 40,
+      enOferta: true
+    }
+  ],
+  total: 120,
+  fecha: 2024-01-10T00:00:00.000Z,
+  pagado: true,
+  metodoPago: 'tarjeta',
+  detalles: {
+    items: 2,
+    descuento: 10
+  }
+}
+{
+  _id: ObjectId('68169b28403b6ffd51905172'),
+  codigo: 'V002',
+  cliente: null,
+  productos: [
+    {
+      _id: ObjectId('68169497403b6ffd51905167'),
+      nombre: 'gorro',
+      precio: 15000,
+      cantidad: 70,
+      enOferta: true
+    }
+  ],
+  total: 30,
+  fecha: 2024-01-12T00:00:00.000Z,
+  pagado: false,
+  metodoPago: 'efectivo',
+  detalles: {
+    items: 1,
+    descuento: 0
+  }
+}
+{
+  _id: ObjectId('68169b28403b6ffd51905173'),
+  codigo: 'V003',
+  cliente: null,
+  productos: [
+    {
+      _id: ObjectId('68169497403b6ffd51905168'),
+      nombre: 'chaqueta',
+      precio: 80000,
+      cantidad: 30,
+      enOferta: true
+    },
+    {
+      _id: ObjectId('68169497403b6ffd51905169'),
+      nombre: 'zapatos',
+      precio: 90000,
+      cantidad: 25,
+      enOferta: true
+    },
+    {
+      _id: ObjectId('68169497403b6ffd51905165'),
+      nombre: 'camisa',
+      precio: 30000,
+      cantidad: 50,
+      enOferta: true
+    }
+  ],
+  total: 400,
+  fecha: 2024-01-15T00:00:00.000Z,
+  pagado: true,
+  metodoPago: 'tarjeta',
+  detalles: {
+    items: 3,
+    descuento: 20
+  }
+}
+{
+  _id: ObjectId('68169b28403b6ffd51905174'),
+  codigo: 'V004',
+  cliente: null,
+  productos: [
+    {
+      _id: ObjectId('68169497403b6ffd5190516a'),
+      nombre: 'camiseta',
+      precio: 25000,
+      cantidad: 60,
+      enOferta: true
+    }
+  ],
+  total: 50,
+  fecha: 2024-02-01T00:00:00.000Z,
+  pagado: false,
+  metodoPago: 'efectivo'
+}
+{
+  _id: ObjectId('68169b28403b6ffd51905175'),
+  codigo: 'V005',
+  cliente: null,
+  productos: [],
+  total: 90,
+  fecha: 2024-02-05T00:00:00.000Z,
+  pagado: true,
+  metodoPago: 'tarjeta',
+  detalles: {
+    items: 0,
+    descuento: 0
+  }
+}
+{
+  _id: ObjectId('68169b28403b6ffd51905176'),
+  codigo: 'V006',
+  cliente: null,
+  productos: [
+    {
+      _id: ObjectId('68169497403b6ffd5190516b'),
+      nombre: 'vestido',
+      precio: 70000,
+      cantidad: 35,
+      enOferta: true
+    },
+    {
+      _id: ObjectId('68169497403b6ffd51905169'),
+      nombre: 'zapatos',
+      precio: 90000,
+      cantidad: 25,
+      enOferta: true
+    }
+  ],
+  total: 180,
+  fecha: 2024-02-10T00:00:00.000Z,
+  pagado: true,
+  metodoPago: 'efectivo',
+  detalles: {
+    items: 2,
+    descuento: 5
+  }
+}
+{
+  _id: ObjectId('68169b28403b6ffd51905177'),
+  codigo: 'V007',
+  cliente: null,
+  productos: [
+    {
+      _id: ObjectId('68169497403b6ffd5190516c'),
+      nombre: 'abrigo',
+      precio: 95000,
+      cantidad: 20,
+      enOferta: true
+    },
+    {
+      _id: ObjectId('68169497403b6ffd5190516d'),
+      nombre: 'bolso',
+      precio: 40000,
+      cantidad: 45,
+      enOferta: true
+    },
+    {
+      _id: ObjectId('68169497403b6ffd5190516e'),
+      nombre: 'bufanda',
+      precio: 20000,
+      cantidad: 55,
+      enOferta: true
+    }
+  ],
+  total: 250,
+  fecha: 2024-03-01T00:00:00.000Z,
+  pagado: false,
+  metodoPago: 'tarjeta',
+  detalles: {
+    items: 3,
+    descuento: 15
+  }
+}
+{
+  _id: ObjectId('68169b28403b6ffd51905178'),
+  codigo: 'V008',
+  cliente: null,
+  productos: [
+    {
+      _id: ObjectId('68169497403b6ffd51905166'),
+      nombre: 'pantalon',
+      precio: 60000,
+      cantidad: 40,
+      enOferta: true
+    }
+  ],
+  total: 75,
+  fecha: 2024-03-10T00:00:00.000Z,
+  pagado: true,
+  metodoPago: 'transferencia'
+}
+{
+  _id: ObjectId('68169b28403b6ffd51905179'),
+  codigo: 'V009',
+  cliente: null,
+  productos: [
+    {
+      _id: ObjectId('68169497403b6ffd5190516f'),
+      nombre: 'falda',
+      precio: 50000,
+      cantidad: 30,
+      enOferta: true
+    },
+    {
+      _id: ObjectId('68169497403b6ffd51905165'),
+      nombre: 'camisa',
+      precio: 30000,
+      cantidad: 50,
+      enOferta: true
+    }
+  ],
+  total: 100,
+  fecha: 2024-04-01T00:00:00.000Z,
+  pagado: false,
+  metodoPago: 'efectivo',
+  detalles: {
+    items: 2,
+    descuento: 0
+  }
+}
+{
+  _id: ObjectId('68169b28403b6ffd5190517a'),
+  codigo: 'V010',
+  cliente: null,
+  productos: [
+    {
+      _id: ObjectId('68169497403b6ffd51905168'),
+      nombre: 'chaqueta',
+      precio: 80000,
+      cantidad: 30,
+      enOferta: true
+    },
+    {
+      _id: ObjectId('68169497403b6ffd51905170'),
+      nombre: 'botas',
+      precio: 85000,
+      cantidad: 22,
+      enOferta: true
+    },
+    {
+      _id: ObjectId('68169497403b6ffd5190516e'),
+      nombre: 'bufanda',
+      precio: 20000,
+      cantidad: 55,
+      enOferta: true
+    }
+  ],
+  total: 300,
+  fecha: 2024-04-15T00:00:00.000Z,
+  pagado: true,
+  metodoPago: 'tarjeta'
+}
+db.ventas.drop
+[Function: drop] AsyncFunction {
+  apiVersions: [ 1, Infinity ],
+  returnsPromise: true,
+  serverVersions: [ '0.0.0', '999.999.999' ],
+  topologies: [ 'ReplSet', 'Sharded', 'LoadBalanced', 'Standalone' ],
+  returnType: { type: 'unknown', attributes: {} },
+  deprecated: false,
+  platforms: [ 'Compass', 'Browser', 'CLI' ],
+  isDirectShellCommand: false,
+  acceptsRawInput: false,
+  shellCommandCompleter: undefined,
+  help: [Function (anonymous)] Help
+}
+db.ventas.drop()
+true
+const clienteAna = db.clientes.findOne({ nombre: "Ana" });
+const clienteLuis = db.clientes.findOne({ nombre: "Luis" });
+const clienteLucia = db.clientes.findOne({ nombre: "Lucía" });
+const clientePedro = db.clientes.findOne({ nombre: "Pedro" });
+const clienteElena = db.clientes.findOne({ nombre: "Elena" });
+const clienteMario = db.clientes.findOne({ nombre: "Mario" });
+const clienteSara = db.clientes.findOne({ nombre: "Sara" });
+const clienteSofia = db.clientes.findOne({ nombre: "Sofía" });
+const clienteJuan = db.clientes.findOne({ nombre: "Juan" });
+const camisa = db.productos.findOne({ nombre: "camisa" });
+const pantalon = db.productos.findOne({ nombre: "pantalón" });
+const gorro = db.productos.findOne({ nombre: "gorro" });
+const chaqueta = db.productos.findOne({ nombre: "chaqueta" });
+const zapatos = db.productos.findOne({ nombre: "zapatos" });
+const camiseta = db.productos.findOne({ nombre: "camiseta" });
+const vestido = db.productos.findOne({ nombre: "vestido" });
+const abrigo = db.productos.findOne({ nombre: "abrigo" });
+const bolso = db.productos.findOne({ nombre: "bolso" });
+const bufanda = db.productos.findOne({ nombre: "bufanda" });
+const falda = db.productos.findOne({ nombre: "falda" });
+const botas = db.productos.findOne({ nombre: "botas" });
+db.ventas.insertMany([
+  {
+    codigo: "V001",
+    cliente: clienteAna,
+    productos: [camisa, pantalon],
+    total: 120,
+    fecha: new Date("2024-01-10"),
+    pagado: true,
+    metodoPago: "tarjeta",
+    detalles: { items: 2, descuento: 10 }
+  },
+  {
+    codigo: "V002",
+    cliente: clienteLuis,
+    productos: [gorro],
+    total: 30,
+    fecha: new Date("2024-01-12"),
+    pagado: false,
+    metodoPago: "efectivo",
+    detalles: { items: 1, descuento: 0 }
+  },
+  {
+    codigo: "V003",
+    cliente: clienteLucia,
+    productos: [chaqueta, zapatos, camisa],
+    total: 400,
+    fecha: new Date("2024-01-15"),
+    pagado: true,
+    metodoPago: "tarjeta",
+    detalles: { items: 3, descuento: 20 }
+  },
+  {
+    codigo: "V004",
+    cliente: clientePedro,
+    productos: [camiseta],
+    total: 50,
+    fecha: new Date("2024-02-01"),
+    pagado: false,
+    metodoPago: "efectivo"
+  },
+  {
+    codigo: "V005",
+    cliente: clienteCarlos,
+    productos: [],
+    total: 90,
+    fecha: new Date("2024-02-05"),
+    pagado: true,
+    metodoPago: "tarjeta",
+    detalles: { items: 0, descuento: 0 }
+  },
+  {
+    codigo: "V006",
+    cliente: clienteElena,
+    productos: [vestido, zapatos],
+    total: 180,
+    fecha: new Date("2024-02-10"),
+    pagado: true,
+    metodoPago: "efectivo",
+    detalles: { items: 2, descuento: 5 }
+  },
+  {
+    codigo: "V007",
+    cliente: clienteSara,
+    productos: [abrigo, bolso, bufanda],
+    total: 250,
+    fecha: new Date("2024-03-01"),
+    pagado: false,
+    metodoPago: "tarjeta",
+    detalles: { items: 3, descuento: 15 }
+  },
+  {
+    codigo: "V008",
+    cliente: clienteMario,
+    productos: [pantalon],
+    total: 75,
+    fecha: new Date("2024-03-10"),
+    pagado: true,
+    metodoPago: "transferencia"
+  },
+  {
+    codigo: "V009",
+    cliente: clienteSofia,
+    productos: [falda, camisa],
+    total: 100,
+    fecha: new Date("2024-04-01"),
+    pagado: false,
+    metodoPago: "efectivo",
+    detalles: { items: 2, descuento: 0 }
+  },
+  {
+    codigo: "V010",
+    cliente: clienteJuan,
+    productos: [chaqueta, botas, bufanda],
+    total: 300,
+    fecha: new Date("2024-04-15"),
+    pagado: true,
+    metodoPago: "tarjeta"
+  }
+]);
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId('68169e69403b6ffd5190517b'),
+    '1': ObjectId('68169e69403b6ffd5190517c'),
+    '2': ObjectId('68169e69403b6ffd5190517d'),
+    '3': ObjectId('68169e69403b6ffd5190517e'),
+    '4': ObjectId('68169e69403b6ffd5190517f'),
+    '5': ObjectId('68169e69403b6ffd51905180'),
+    '6': ObjectId('68169e69403b6ffd51905181'),
+    '7': ObjectId('68169e69403b6ffd51905182'),
+    '8': ObjectId('68169e69403b6ffd51905183'),
+    '9': ObjectId('68169e69403b6ffd51905184')
+  }
+}
+db.ventas.find()
+{
+  _id: ObjectId('68169e69403b6ffd5190517b'),
+  codigo: 'V001',
+  cliente: null,
+  productos: [
+    {
+      _id: ObjectId('68169497403b6ffd51905165'),
+      nombre: 'camisa',
+      precio: 30000,
+      cantidad: 50,
+      enOferta: true
+    },
+    null
+  ],
+  total: 120,
+  fecha: 2024-01-10T00:00:00.000Z,
+  pagado: true,
+  metodoPago: 'tarjeta',
+  detalles: {
+    items: 2,
+    descuento: 10
+  }
+}
+{
+  _id: ObjectId('68169e69403b6ffd5190517c'),
+  codigo: 'V002',
+  cliente: null,
+  productos: [
+    {
+      _id: ObjectId('68169497403b6ffd51905167'),
+      nombre: 'gorro',
+      precio: 15000,
+      cantidad: 70,
+      enOferta: true
+    }
+  ],
+  total: 30,
+  fecha: 2024-01-12T00:00:00.000Z,
+  pagado: false,
+  metodoPago: 'efectivo',
+  detalles: {
+    items: 1,
+    descuento: 0
+  }
+}
+{
+  _id: ObjectId('68169e69403b6ffd5190517d'),
+  codigo: 'V003',
+  cliente: null,
+  productos: [
+    {
+      _id: ObjectId('68169497403b6ffd51905168'),
+      nombre: 'chaqueta',
+      precio: 80000,
+      cantidad: 30,
+      enOferta: true
+    },
+    {
+      _id: ObjectId('68169497403b6ffd51905169'),
+      nombre: 'zapatos',
+      precio: 90000,
+      cantidad: 25,
+      enOferta: true
+    },
+    {
+      _id: ObjectId('68169497403b6ffd51905165'),
+      nombre: 'camisa',
+      precio: 30000,
+      cantidad: 50,
+      enOferta: true
+    }
+  ],
+  total: 400,
+  fecha: 2024-01-15T00:00:00.000Z,
+  pagado: true,
+  metodoPago: 'tarjeta',
+  detalles: {
+    items: 3,
+    descuento: 20
+  }
+}
+{
+  _id: ObjectId('68169e69403b6ffd5190517e'),
+  codigo: 'V004',
+  cliente: null,
+  productos: [
+    {
+      _id: ObjectId('68169497403b6ffd5190516a'),
+      nombre: 'camiseta',
+      precio: 25000,
+      cantidad: 60,
+      enOferta: true
+    }
+  ],
+  total: 50,
+  fecha: 2024-02-01T00:00:00.000Z,
+  pagado: false,
+  metodoPago: 'efectivo'
+}
+{
+  _id: ObjectId('68169e69403b6ffd5190517f'),
+  codigo: 'V005',
+  cliente: null,
+  productos: [],
+  total: 90,
+  fecha: 2024-02-05T00:00:00.000Z,
+  pagado: true,
+  metodoPago: 'tarjeta',
+  detalles: {
+    items: 0,
+    descuento: 0
+  }
+}
+{
+  _id: ObjectId('68169e69403b6ffd51905180'),
+  codigo: 'V006',
+  cliente: null,
+  productos: [
+    {
+      _id: ObjectId('68169497403b6ffd5190516b'),
+      nombre: 'vestido',
+      precio: 70000,
+      cantidad: 35,
+      enOferta: true
+    },
+    {
+      _id: ObjectId('68169497403b6ffd51905169'),
+      nombre: 'zapatos',
+      precio: 90000,
+      cantidad: 25,
+      enOferta: true
+    }
+  ],
+  total: 180,
+  fecha: 2024-02-10T00:00:00.000Z,
+  pagado: true,
+  metodoPago: 'efectivo',
+  detalles: {
+    items: 2,
+    descuento: 5
+  }
+}
+{
+  _id: ObjectId('68169e69403b6ffd51905181'),
+  codigo: 'V007',
+  cliente: null,
+  productos: [
+    {
+      _id: ObjectId('68169497403b6ffd5190516c'),
+      nombre: 'abrigo',
+      precio: 95000,
+      cantidad: 20,
+      enOferta: true
+    },
+    {
+      _id: ObjectId('68169497403b6ffd5190516d'),
+      nombre: 'bolso',
+      precio: 40000,
+      cantidad: 45,
+      enOferta: true
+    },
+    {
+      _id: ObjectId('68169497403b6ffd5190516e'),
+      nombre: 'bufanda',
+      precio: 20000,
+      cantidad: 55,
+      enOferta: true
+    }
+  ],
+  total: 250,
+  fecha: 2024-03-01T00:00:00.000Z,
+  pagado: false,
+  metodoPago: 'tarjeta',
+  detalles: {
+    items: 3,
+    descuento: 15
+  }
+}
+{
+  _id: ObjectId('68169e69403b6ffd51905182'),
+  codigo: 'V008',
+  cliente: null,
+  productos: [
+    null
+  ],
+  total: 75,
+  fecha: 2024-03-10T00:00:00.000Z,
+  pagado: true,
+  metodoPago: 'transferencia'
+}
+{
+  _id: ObjectId('68169e69403b6ffd51905183'),
+  codigo: 'V009',
+  cliente: null,
+  productos: [
+    {
+      _id: ObjectId('68169497403b6ffd5190516f'),
+      nombre: 'falda',
+      precio: 50000,
+      cantidad: 30,
+      enOferta: true
+    },
+    {
+      _id: ObjectId('68169497403b6ffd51905165'),
+      nombre: 'camisa',
+      precio: 30000,
+      cantidad: 50,
+      enOferta: true
+    }
+  ],
+  total: 100,
+  fecha: 2024-04-01T00:00:00.000Z,
+  pagado: false,
+  metodoPago: 'efectivo',
+  detalles: {
+    items: 2,
+    descuento: 0
+  }
+}
+{
+  _id: ObjectId('68169e69403b6ffd51905184'),
+  codigo: 'V010',
+  cliente: null,
+  productos: [
+    {
+      _id: ObjectId('68169497403b6ffd51905168'),
+      nombre: 'chaqueta',
+      precio: 80000,
+      cantidad: 30,
+      enOferta: true
+    },
+    {
+      _id: ObjectId('68169497403b6ffd51905170'),
+      nombre: 'botas',
+      precio: 85000,
+      cantidad: 22,
+      enOferta: true
+    },
+    {
+      _id: ObjectId('68169497403b6ffd5190516e'),
+      nombre: 'bufanda',
+      precio: 20000,
+      cantidad: 55,
+      enOferta: true
+    }
+  ],
+  total: 300,
+  fecha: 2024-04-15T00:00:00.000Z,
+  pagado: true,
+  metodoPago: 'tarjeta'
+}
+db.vetnas.drop()
+true
+db.ventas.drop()
+true
+db.ventas.find()
+const clienteAna = db.Clientes.findOne({ nombre: "Ana" });
+const clienteLuis = db.Clientes.findOne({ nombre: "Luis" });
+const clienteLucia = db.Clientes.findOne({ nombre: "Lucía" });
+const clientePedro = db.Clientes.findOne({ nombre: "Pedro" });
+const clienteElena = db.Clientes.findOne({ nombre: "Elena" });
+const clienteMario = db.Clientes.findOne({ nombre: "Mario" });
+const clienteSara = db.Clientes.findOne({ nombre: "Sara" });
+const clienteSofia = db.Clientes.findOne({ nombre: "Sofía" });
+const clienteJuan = db.Clientes.findOne({ nombre: "Juan" });
+db.ventas.insertMany([
+  {
+    codigo: "V001",
+    cliente: clienteAna,
+    productos: [camisa, pantalon],
+    total: 120,
+    fecha: new Date("2024-01-10"),
+    pagado: true,
+    metodoPago: "tarjeta",
+    detalles: { items: 2, descuento: 10 }
+  },
+  {
+    codigo: "V002",
+    cliente: clienteLuis,
+    productos: [gorro],
+    total: 30,
+    fecha: new Date("2024-01-12"),
+    pagado: false,
+    metodoPago: "efectivo",
+    detalles: { items: 1, descuento: 0 }
+  },
+  {
+    codigo: "V003",
+    cliente: clienteLucia,
+    productos: [chaqueta, zapatos, camisa],
+    total: 400,
+    fecha: new Date("2024-01-15"),
+    pagado: true,
+    metodoPago: "tarjeta",
+    detalles: { items: 3, descuento: 20 }
+  },
+  {
+    codigo: "V004",
+    cliente: clientePedro,
+    productos: [camiseta],
+    total: 50,
+    fecha: new Date("2024-02-01"),
+    pagado: false,
+    metodoPago: "efectivo"
+  },
+  {
+    codigo: "V005",
+    cliente: clienteCarlos,
+    productos: [],
+    total: 90,
+    fecha: new Date("2024-02-05"),
+    pagado: true,
+    metodoPago: "tarjeta",
+    detalles: { items: 0, descuento: 0 }
+  },
+  {
+    codigo: "V006",
+    cliente: clienteElena,
+    productos: [vestido, zapatos],
+    total: 180,
+    fecha: new Date("2024-02-10"),
+    pagado: true,
+    metodoPago: "efectivo",
+    detalles: { items: 2, descuento: 5 }
+  },
+  {
+    codigo: "V007",
+    cliente: clienteSara,
+    productos: [abrigo, bolso, bufanda],
+    total: 250,
+    fecha: new Date("2024-03-01"),
+    pagado: false,
+    metodoPago: "tarjeta",
+    detalles: { items: 3, descuento: 15 }
+  },
+  {
+    codigo: "V008",
+    cliente: clienteMario,
+    productos: [pantalon],
+    total: 75,
+    fecha: new Date("2024-03-10"),
+    pagado: true,
+    metodoPago: "transferencia"
+  },
+  {
+    codigo: "V009",
+    cliente: clienteSofia,
+    productos: [falda, camisa],
+    total: 100,
+    fecha: new Date("2024-04-01"),
+    pagado: false,
+    metodoPago: "efectivo",
+    detalles: { items: 2, descuento: 0 }
+  },
+  {
+    codigo: "V010",
+    cliente: clienteJuan,
+    productos: [chaqueta, botas, bufanda],
+    total: 300,
+    fecha: new Date("2024-04-15"),
+    pagado: true,
+    metodoPago: "tarjeta"
+  }
+]);
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId('68169ed4403b6ffd51905185'),
+    '1': ObjectId('68169ed4403b6ffd51905186'),
+    '2': ObjectId('68169ed4403b6ffd51905187'),
+    '3': ObjectId('68169ed4403b6ffd51905188'),
+    '4': ObjectId('68169ed4403b6ffd51905189'),
+    '5': ObjectId('68169ed4403b6ffd5190518a'),
+    '6': ObjectId('68169ed4403b6ffd5190518b'),
+    '7': ObjectId('68169ed4403b6ffd5190518c'),
+    '8': ObjectId('68169ed4403b6ffd5190518d'),
+    '9': ObjectId('68169ed4403b6ffd5190518e')
+  }
+}
+db.ventas.find()
+{
+  _id: ObjectId('68169ed4403b6ffd51905185'),
+  codigo: 'V001',
+  cliente: {
+    _id: ObjectId('68117083681d9ed48beeae7d'),
+    nombre: 'Ana',
+    edad: 25,
+    ciudad: 'Madrid',
+    activo: true,
+    compras: [
+      120,
+      60,
+      90
+    ],
+    membresia: {
+      tipo: 'oro',
+      desde: 2021
+    },
+    telefono: '123456789'
+  },
+  productos: [
+    {
+      _id: ObjectId('68169497403b6ffd51905165'),
+      nombre: 'camisa',
+      precio: 30000,
+      cantidad: 50,
+      enOferta: true
+    },
+    null
+  ],
+  total: 120,
+  fecha: 2024-01-10T00:00:00.000Z,
+  pagado: true,
+  metodoPago: 'tarjeta',
+  detalles: {
+    items: 2,
+    descuento: 10
+  }
+}
+{
+  _id: ObjectId('68169ed4403b6ffd51905186'),
+  codigo: 'V002',
+  cliente: null,
+  productos: [
+    {
+      _id: ObjectId('68169497403b6ffd51905167'),
+      nombre: 'gorro',
+      precio: 15000,
+      cantidad: 70,
+      enOferta: true
+    }
+  ],
+  total: 30,
+  fecha: 2024-01-12T00:00:00.000Z,
+  pagado: false,
+  metodoPago: 'efectivo',
+  detalles: {
+    items: 1,
+    descuento: 0
+  }
+}
+{
+  _id: ObjectId('68169ed4403b6ffd51905187'),
+  codigo: 'V003',
+  cliente: {
+    _id: ObjectId('68117083681d9ed48beeae80'),
+    nombre: 'Lucía',
+    edad: 45,
+    ciudad: 'Sevilla',
+    activo: false,
+    compras: [
+      200,
+      300,
+      400,
+      500
+    ],
+    membresia: {
+      tipo: 'oro',
+      desde: 2020
+    }
+  },
+  productos: [
+    {
+      _id: ObjectId('68169497403b6ffd51905168'),
+      nombre: 'chaqueta',
+      precio: 80000,
+      cantidad: 30,
+      enOferta: true
+    },
+    {
+      _id: ObjectId('68169497403b6ffd51905169'),
+      nombre: 'zapatos',
+      precio: 90000,
+      cantidad: 25,
+      enOferta: true
+    },
+    {
+      _id: ObjectId('68169497403b6ffd51905165'),
+      nombre: 'camisa',
+      precio: 30000,
+      cantidad: 50,
+      enOferta: true
+    }
+  ],
+  total: 400,
+  fecha: 2024-01-15T00:00:00.000Z,
+  pagado: true,
+  metodoPago: 'tarjeta',
+  detalles: {
+    items: 3,
+    descuento: 20
+  }
+}
+{
+  _id: ObjectId('68169ed4403b6ffd51905188'),
+  codigo: 'V004',
+  cliente: {
+    _id: ObjectId('68117083681d9ed48beeae81'),
+    nombre: 'Pedro',
+    edad: 35,
+    ciudad: 'Valencia',
+    activo: true,
+    compras: [
+      10,
+      20
+    ]
+  },
+  productos: [
+    {
+      _id: ObjectId('68169497403b6ffd5190516a'),
+      nombre: 'camiseta',
+      precio: 25000,
+      cantidad: 60,
+      enOferta: true
+    }
+  ],
+  total: 50,
+  fecha: 2024-02-01T00:00:00.000Z,
+  pagado: false,
+  metodoPago: 'efectivo'
+}
+{
+  _id: ObjectId('68169ed4403b6ffd51905189'),
+  codigo: 'V005',
+  cliente: null,
+  productos: [],
+  total: 90,
+  fecha: 2024-02-05T00:00:00.000Z,
+  pagado: true,
+  metodoPago: 'tarjeta',
+  detalles: {
+    items: 0,
+    descuento: 0
+  }
+}
+{
+  _id: ObjectId('68169ed4403b6ffd5190518a'),
+  codigo: 'V006',
+  cliente: {
+    _id: ObjectId('68117083681d9ed48beeae82'),
+    nombre: 'Elena',
+    edad: 28,
+    ciudad: 'Madrid',
+    activo: false,
+    compras: [
+      99,
+      1
+    ],
+    telefono: '111222333',
+    membresia: {
+      tipo: 'bronce',
+      desde: 2022
+    }
+  },
+  productos: [
+    {
+      _id: ObjectId('68169497403b6ffd5190516b'),
+      nombre: 'vestido',
+      precio: 70000,
+      cantidad: 35,
+      enOferta: true
+    },
+    {
+      _id: ObjectId('68169497403b6ffd51905169'),
+      nombre: 'zapatos',
+      precio: 90000,
+      cantidad: 25,
+      enOferta: true
+    }
+  ],
+  total: 180,
+  fecha: 2024-02-10T00:00:00.000Z,
+  pagado: true,
+  metodoPago: 'efectivo',
+  detalles: {
+    items: 2,
+    descuento: 5
+  }
+}
+{
+  _id: ObjectId('68169ed4403b6ffd5190518b'),
+  codigo: 'V007',
+  cliente: {
+    _id: ObjectId('68117083681d9ed48beeae84'),
+    nombre: 'Sara',
+    edad: 50,
+    ciudad: 'Madrid',
+    activo: false,
+    compras: [
+      150,
+      250,
+      350
+    ],
+    membresia: {
+      tipo: 'oro',
+      desde: 2019
+    },
+    telefono: '000111222'
+  },
+  productos: [
+    {
+      _id: ObjectId('68169497403b6ffd5190516c'),
+      nombre: 'abrigo',
+      precio: 95000,
+      cantidad: 20,
+      enOferta: true
+    },
+    {
+      _id: ObjectId('68169497403b6ffd5190516d'),
+      nombre: 'bolso',
+      precio: 40000,
+      cantidad: 45,
+      enOferta: true
+    },
+    {
+      _id: ObjectId('68169497403b6ffd5190516e'),
+      nombre: 'bufanda',
+      precio: 20000,
+      cantidad: 55,
+      enOferta: true
+    }
+  ],
+  total: 250,
+  fecha: 2024-03-01T00:00:00.000Z,
+  pagado: false,
+  metodoPago: 'tarjeta',
+  detalles: {
+    items: 3,
+    descuento: 15
+  }
+}
+{
+  _id: ObjectId('68169ed4403b6ffd5190518c'),
+  codigo: 'V008',
+  cliente: {
+    _id: ObjectId('68117083681d9ed48beeae83'),
+    nombre: 'Mario',
+    edad: 22,
+    ciudad: 'Bilbao',
+    activo: true,
+    compras: [
+      120,
+      180
+    ]
+  },
+  productos: [
+    null
+  ],
+  total: 75,
+  fecha: 2024-03-10T00:00:00.000Z,
+  pagado: true,
+  metodoPago: 'transferencia'
+}
+{
+  _id: ObjectId('68169ed4403b6ffd5190518d'),
+  codigo: 'V009',
+  cliente: null,
+  productos: [
+    {
+      _id: ObjectId('68169497403b6ffd5190516f'),
+      nombre: 'falda',
+      precio: 50000,
+      cantidad: 30,
+      enOferta: true
+    },
+    {
+      _id: ObjectId('68169497403b6ffd51905165'),
+      nombre: 'camisa',
+      precio: 30000,
+      cantidad: 50,
+      enOferta: true
+    }
+  ],
+  total: 100,
+  fecha: 2024-04-01T00:00:00.000Z,
+  pagado: false,
+  metodoPago: 'efectivo',
+  detalles: {
+    items: 2,
+    descuento: 0
+  }
+}
+{
+  _id: ObjectId('68169ed4403b6ffd5190518e'),
+  codigo: 'V010',
+  cliente: null,
+  productos: [
+    {
+      _id: ObjectId('68169497403b6ffd51905168'),
+      nombre: 'chaqueta',
+      precio: 80000,
+      cantidad: 30,
+      enOferta: true
+    },
+    {
+      _id: ObjectId('68169497403b6ffd51905170'),
+      nombre: 'botas',
+      precio: 85000,
+      cantidad: 22,
+      enOferta: true
+    },
+    {
+      _id: ObjectId('68169497403b6ffd5190516e'),
+      nombre: 'bufanda',
+      precio: 20000,
+      cantidad: 55,
+      enOferta: true
+    }
+  ],
+  total: 300,
+  fecha: 2024-04-15T00:00:00.000Z,
+  pagado: true,
+  metodoPago: 'tarjeta'
+}
+db.ventas.drop()
+true
+const clienteCarlos = db.Clientes.findOne({ nombre: "Carlos" });
+db.ventas.insertMany([
+  {
+    codigo: "V001",
+    cliente: clienteAna,
+    productos: [camisa, pantalon],
+    total: 120,
+    fecha: new Date("2024-01-10"),
+    pagado: true,
+    metodoPago: "tarjeta",
+    detalles: { items: 2, descuento: 10 }
+  },
+  {
+    codigo: "V002",
+    cliente: clienteLuis,
+    productos: [gorro],
+    total: 30,
+    fecha: new Date("2024-01-12"),
+    pagado: false,
+    metodoPago: "efectivo",
+    detalles: { items: 1, descuento: 0 }
+  },
+  {
+    codigo: "V003",
+    cliente: clienteLucia,
+    productos: [chaqueta, zapatos, camisa],
+    total: 400,
+    fecha: new Date("2024-01-15"),
+    pagado: true,
+    metodoPago: "tarjeta",
+    detalles: { items: 3, descuento: 20 }
+  },
+  {
+    codigo: "V004",
+    cliente: clientePedro,
+    productos: [camiseta],
+    total: 50,
+    fecha: new Date("2024-02-01"),
+    pagado: false,
+    metodoPago: "efectivo"
+  },
+  {
+    codigo: "V005",
+    cliente: clienteCarlos,
+    productos: [],
+    total: 90,
+    fecha: new Date("2024-02-05"),
+    pagado: true,
+    metodoPago: "tarjeta",
+    detalles: { items: 0, descuento: 0 }
+  },
+  {
+    codigo: "V006",
+    cliente: clienteElena,
+    productos: [vestido, zapatos],
+    total: 180,
+    fecha: new Date("2024-02-10"),
+    pagado: true,
+    metodoPago: "efectivo",
+    detalles: { items: 2, descuento: 5 }
+  },
+  {
+    codigo: "V007",
+    cliente: clienteSara,
+    productos: [abrigo, bolso, bufanda],
+    total: 250,
+    fecha: new Date("2024-03-01"),
+    pagado: false,
+    metodoPago: "tarjeta",
+    detalles: { items: 3, descuento: 15 }
+  },
+  {
+    codigo: "V008",
+    cliente: clienteMario,
+    productos: [pantalon],
+    total: 75,
+    fecha: new Date("2024-03-10"),
+    pagado: true,
+    metodoPago: "transferencia"
+  },
+  {
+    codigo: "V009",
+    cliente: clienteSofia,
+    productos: [falda, camisa],
+    total: 100,
+    fecha: new Date("2024-04-01"),
+    pagado: false,
+    metodoPago: "efectivo",
+    detalles: { items: 2, descuento: 0 }
+  },
+  {
+    codigo: "V010",
+    cliente: clienteJuan,
+    productos: [chaqueta, botas, bufanda],
+    total: 300,
+    fecha: new Date("2024-04-15"),
+    pagado: true,
+    metodoPago: "tarjeta"
+  }
+]);
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId('68169fa8403b6ffd5190518f'),
+    '1': ObjectId('68169fa8403b6ffd51905190'),
+    '2': ObjectId('68169fa8403b6ffd51905191'),
+    '3': ObjectId('68169fa8403b6ffd51905192'),
+    '4': ObjectId('68169fa8403b6ffd51905193'),
+    '5': ObjectId('68169fa8403b6ffd51905194'),
+    '6': ObjectId('68169fa8403b6ffd51905195'),
+    '7': ObjectId('68169fa8403b6ffd51905196'),
+    '8': ObjectId('68169fa8403b6ffd51905197'),
+    '9': ObjectId('68169fa8403b6ffd51905198')
+  }
+}
+db.ventas.find()
+{
+  _id: ObjectId('68169fa8403b6ffd5190518f'),
+  codigo: 'V001',
+  cliente: {
+    _id: ObjectId('68117083681d9ed48beeae7d'),
+    nombre: 'Ana',
+    edad: 25,
+    ciudad: 'Madrid',
+    activo: true,
+    compras: [
+      120,
+      60,
+      90
+    ],
+    membresia: {
+      tipo: 'oro',
+      desde: 2021
+    },
+    telefono: '123456789'
+  },
+  productos: [
+    {
+      _id: ObjectId('68169497403b6ffd51905165'),
+      nombre: 'camisa',
+      precio: 30000,
+      cantidad: 50,
+      enOferta: true
+    },
+    null
+  ],
+  total: 120,
+  fecha: 2024-01-10T00:00:00.000Z,
+  pagado: true,
+  metodoPago: 'tarjeta',
+  detalles: {
+    items: 2,
+    descuento: 10
+  }
+}
+{
+  _id: ObjectId('68169fa8403b6ffd51905190'),
+  codigo: 'V002',
+  cliente: null,
+  productos: [
+    {
+      _id: ObjectId('68169497403b6ffd51905167'),
+      nombre: 'gorro',
+      precio: 15000,
+      cantidad: 70,
+      enOferta: true
+    }
+  ],
+  total: 30,
+  fecha: 2024-01-12T00:00:00.000Z,
+  pagado: false,
+  metodoPago: 'efectivo',
+  detalles: {
+    items: 1,
+    descuento: 0
+  }
+}
+{
+  _id: ObjectId('68169fa8403b6ffd51905191'),
+  codigo: 'V003',
+  cliente: {
+    _id: ObjectId('68117083681d9ed48beeae80'),
+    nombre: 'Lucía',
+    edad: 45,
+    ciudad: 'Sevilla',
+    activo: false,
+    compras: [
+      200,
+      300,
+      400,
+      500
+    ],
+    membresia: {
+      tipo: 'oro',
+      desde: 2020
+    }
+  },
+  productos: [
+    {
+      _id: ObjectId('68169497403b6ffd51905168'),
+      nombre: 'chaqueta',
+      precio: 80000,
+      cantidad: 30,
+      enOferta: true
+    },
+    {
+      _id: ObjectId('68169497403b6ffd51905169'),
+      nombre: 'zapatos',
+      precio: 90000,
+      cantidad: 25,
+      enOferta: true
+    },
+    {
+      _id: ObjectId('68169497403b6ffd51905165'),
+      nombre: 'camisa',
+      precio: 30000,
+      cantidad: 50,
+      enOferta: true
+    }
+  ],
+  total: 400,
+  fecha: 2024-01-15T00:00:00.000Z,
+  pagado: true,
+  metodoPago: 'tarjeta',
+  detalles: {
+    items: 3,
+    descuento: 20
+  }
+}
+{
+  _id: ObjectId('68169fa8403b6ffd51905192'),
+  codigo: 'V004',
+  cliente: {
+    _id: ObjectId('68117083681d9ed48beeae81'),
+    nombre: 'Pedro',
+    edad: 35,
+    ciudad: 'Valencia',
+    activo: true,
+    compras: [
+      10,
+      20
+    ]
+  },
+  productos: [
+    {
+      _id: ObjectId('68169497403b6ffd5190516a'),
+      nombre: 'camiseta',
+      precio: 25000,
+      cantidad: 60,
+      enOferta: true
+    }
+  ],
+  total: 50,
+  fecha: 2024-02-01T00:00:00.000Z,
+  pagado: false,
+  metodoPago: 'efectivo'
+}
+{
+  _id: ObjectId('68169fa8403b6ffd51905193'),
+  codigo: 'V005',
+  cliente: {
+    _id: ObjectId('68117083681d9ed48beeae7f'),
+    nombre: 'Carlos',
+    edad: 19,
+    ciudad: 'Madrid',
+    activo: true,
+    compras: [],
+    telefono: '987654321'
+  },
+  productos: [],
+  total: 90,
+  fecha: 2024-02-05T00:00:00.000Z,
+  pagado: true,
+  metodoPago: 'tarjeta',
+  detalles: {
+    items: 0,
+    descuento: 0
+  }
+}
+{
+  _id: ObjectId('68169fa8403b6ffd51905194'),
+  codigo: 'V006',
+  cliente: {
+    _id: ObjectId('68117083681d9ed48beeae82'),
+    nombre: 'Elena',
+    edad: 28,
+    ciudad: 'Madrid',
+    activo: false,
+    compras: [
+      99,
+      1
+    ],
+    telefono: '111222333',
+    membresia: {
+      tipo: 'bronce',
+      desde: 2022
+    }
+  },
+  productos: [
+    {
+      _id: ObjectId('68169497403b6ffd5190516b'),
+      nombre: 'vestido',
+      precio: 70000,
+      cantidad: 35,
+      enOferta: true
+    },
+    {
+      _id: ObjectId('68169497403b6ffd51905169'),
+      nombre: 'zapatos',
+      precio: 90000,
+      cantidad: 25,
+      enOferta: true
+    }
+  ],
+  total: 180,
+  fecha: 2024-02-10T00:00:00.000Z,
+  pagado: true,
+  metodoPago: 'efectivo',
+  detalles: {
+    items: 2,
+    descuento: 5
+  }
+}
+{
+  _id: ObjectId('68169fa8403b6ffd51905195'),
+  codigo: 'V007',
+  cliente: {
+    _id: ObjectId('68117083681d9ed48beeae84'),
+    nombre: 'Sara',
+    edad: 50,
+    ciudad: 'Madrid',
+    activo: false,
+    compras: [
+      150,
+      250,
+      350
+    ],
+    membresia: {
+      tipo: 'oro',
+      desde: 2019
+    },
+    telefono: '000111222'
+  },
+  productos: [
+    {
+      _id: ObjectId('68169497403b6ffd5190516c'),
+      nombre: 'abrigo',
+      precio: 95000,
+      cantidad: 20,
+      enOferta: true
+    },
+    {
+      _id: ObjectId('68169497403b6ffd5190516d'),
+      nombre: 'bolso',
+      precio: 40000,
+      cantidad: 45,
+      enOferta: true
+    },
+    {
+      _id: ObjectId('68169497403b6ffd5190516e'),
+      nombre: 'bufanda',
+      precio: 20000,
+      cantidad: 55,
+      enOferta: true
+    }
+  ],
+  total: 250,
+  fecha: 2024-03-01T00:00:00.000Z,
+  pagado: false,
+  metodoPago: 'tarjeta',
+  detalles: {
+    items: 3,
+    descuento: 15
+  }
+}
+{
+  _id: ObjectId('68169fa8403b6ffd51905196'),
+  codigo: 'V008',
+  cliente: {
+    _id: ObjectId('68117083681d9ed48beeae83'),
+    nombre: 'Mario',
+    edad: 22,
+    ciudad: 'Bilbao',
+    activo: true,
+    compras: [
+      120,
+      180
+    ]
+  },
+  productos: [
+    null
+  ],
+  total: 75,
+  fecha: 2024-03-10T00:00:00.000Z,
+  pagado: true,
+  metodoPago: 'transferencia'
+}
+{
+  _id: ObjectId('68169fa8403b6ffd51905197'),
+  codigo: 'V009',
+  cliente: null,
+  productos: [
+    {
+      _id: ObjectId('68169497403b6ffd5190516f'),
+      nombre: 'falda',
+      precio: 50000,
+      cantidad: 30,
+      enOferta: true
+    },
+    {
+      _id: ObjectId('68169497403b6ffd51905165'),
+      nombre: 'camisa',
+      precio: 30000,
+      cantidad: 50,
+      enOferta: true
+    }
+  ],
+  total: 100,
+  fecha: 2024-04-01T00:00:00.000Z,
+  pagado: false,
+  metodoPago: 'efectivo',
+  detalles: {
+    items: 2,
+    descuento: 0
+  }
+}
+{
+  _id: ObjectId('68169fa8403b6ffd51905198'),
+  codigo: 'V010',
+  cliente: null,
+  productos: [
+    {
+      _id: ObjectId('68169497403b6ffd51905168'),
+      nombre: 'chaqueta',
+      precio: 80000,
+      cantidad: 30,
+      enOferta: true
+    },
+    {
+      _id: ObjectId('68169497403b6ffd51905170'),
+      nombre: 'botas',
+      precio: 85000,
+      cantidad: 22,
+      enOferta: true
+    },
+    {
+      _id: ObjectId('68169497403b6ffd5190516e'),
+      nombre: 'bufanda',
+      precio: 20000,
+      cantidad: 55,
+      enOferta: true
+    }
+  ],
+  total: 300,
+  fecha: 2024-04-15T00:00:00.000Z,
+  pagado: true,
+  metodoPago: 'tarjeta'
+}
+db.ventas.drop();
+true
+db.ventas.insertMany([
+  {
+    codigo: "V001",
+    cliente: clienteAna,
+    productos: [camisa, pantalon],
+    total: 120,
+    fecha: new Date("2024-01-10"),
+    pagado: true,
+    metodoPago: "tarjeta",
+    detalles: { items: 2, descuento: 10 }
+  },
+  {
+    codigo: "V002",
+    cliente: clienteLuis,
+    productos: [gorro],
+    total: 30,
+    fecha: new Date("2024-01-12"),
+    pagado: false,
+    metodoPago: "efectivo",
+    detalles: { items: 1, descuento: 0 }
+  },
+  {
+    codigo: "V003",
+    cliente: clienteLucia,
+    productos: [chaqueta, zapatos, camisa],
+    total: 400,
+    fecha: new Date("2024-01-15"),
+    pagado: true,
+    metodoPago: "tarjeta",
+    detalles: { items: 3, descuento: 20 }
+  },
+  {
+    codigo: "V004",
+    cliente: clientePedro,
+    productos: [camiseta],
+    total: 50,
+    fecha: new Date("2024-02-01"),
+    pagado: false,
+    metodoPago: "efectivo"
+  },
+  {
+    codigo: "V005",
+    cliente: clienteCarlos,
+    productos: [],
+    total: 90,
+    fecha: new Date("2024-02-05"),
+    pagado: true,
+    metodoPago: "tarjeta",
+    detalles: { items: 0, descuento: 0 }
+  },
+  {
+    codigo: "V006",
+    cliente: clienteElena,
+    productos: [vestido, zapatos],
+    total: 180,
+    fecha: new Date("2024-02-10"),
+    pagado: true,
+    metodoPago: "efectivo",
+    detalles: { items: 2, descuento: 5 }
+  },
+  {
+    codigo: "V007",
+    cliente: clienteSara,
+    productos: [abrigo, bolso, bufanda],
+    total: 250,
+    fecha: new Date("2024-03-01"),
+    pagado: false,
+    metodoPago: "tarjeta",
+    detalles: { items: 3, descuento: 15 }
+  },
+  {
+    codigo: "V008",
+    cliente: clienteMario,
+    productos: [pantalon],
+    total: 75,
+    fecha: new Date("2024-03-10"),
+    pagado: true,
+    metodoPago: "transferencia"
+  },
+  {
+    codigo: "V009",
+    cliente: clienteSofia,
+    productos: [falda, camisa],
+    total: 100,
+    fecha: new Date("2024-04-01"),
+    pagado: false,
+    metodoPago: "efectivo",
+    detalles: { items: 2, descuento: 0 }
+  },
+  {
+    codigo: "V010",
+    cliente: clienteJuan,
+    productos: [chaqueta, botas, bufanda],
+    total: 300,
+    fecha: new Date("2024-04-15"),
+    pagado: true,
+    metodoPago: "tarjeta"
+  }
+]);
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId('6816a0b2403b6ffd51905199'),
+    '1': ObjectId('6816a0b2403b6ffd5190519a'),
+    '2': ObjectId('6816a0b2403b6ffd5190519b'),
+    '3': ObjectId('6816a0b2403b6ffd5190519c'),
+    '4': ObjectId('6816a0b2403b6ffd5190519d'),
+    '5': ObjectId('6816a0b2403b6ffd5190519e'),
+    '6': ObjectId('6816a0b2403b6ffd5190519f'),
+    '7': ObjectId('6816a0b2403b6ffd519051a0'),
+    '8': ObjectId('6816a0b2403b6ffd519051a1'),
+    '9': ObjectId('6816a0b2403b6ffd519051a2')
+  }
+}
+use Colegio
+switched to db Colegio
+db.Alumnos.insertMany([
+  { nombre: "Juan Pérez", edad: 13 },
+  { nombre: "Ana Torres", edad: 14 },
+  { nombre: "Luis García", edad: 13 },
+  { nombre: "Sofía Ruiz", edad: 12 },
+  { nombre: "Mateo López", edad: 15 }
+])
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId('6816a3d3403b6ffd519051a3'),
+    '1': ObjectId('6816a3d3403b6ffd519051a4'),
+    '2': ObjectId('6816a3d3403b6ffd519051a5'),
+    '3': ObjectId('6816a3d3403b6ffd519051a6'),
+    '4': ObjectId('6816a3d3403b6ffd519051a7')
+  }
+}
+db.Materia.insertMany([
+  { nombre: "Matemáticas" },
+  {  nombre: "Lengua" },
+  { nombre: "Ciencias" },
+  { nombre: "Historia" },
+  { nombre: "Inglés" }
+])
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId('6816a418403b6ffd519051a8'),
+    '1': ObjectId('6816a418403b6ffd519051a9'),
+    '2': ObjectId('6816a418403b6ffd519051aa'),
+    '3': ObjectId('6816a418403b6ffd519051ab'),
+    '4': ObjectId('6816a418403b6ffd519051ac')
+  }
+}
+db.Grados.insertMany([
+  {grado: "sexto" },
+  { grado: "septimo" },
+  { grado: "octavo" }
+])
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId('6816a453403b6ffd519051ad'),
+    '1': ObjectId('6816a453403b6ffd519051ae'),
+    '2': ObjectId('6816a453403b6ffd519051af')
+  }
+}
+const juan = db.Alumnos.findOne({ nombre: "Juan Pérez" })
+const ana = db.Alumnos.findOne({ nombre: "Ana Torres" })._id
+const luis = db.Alumnos.findOne({ nombre: "Luis García" })
+const sofia = db.Alumnos.findOne({ nombre: "Sofía Ruiz" })
+const mateo = db.Alumnos.findOne({ nombre: "Mateo López" })
+const mate = db.Materia.findOne({ nombre: "Matemáticas" })
+const lengua = db.Materia.findOne({ nombre: "Lengua" })
+const ciencias = db.Materia.findOne({ nombre: "Ciencias" })
+const historia = db.Materia.findOne({ nombre: "Historia" })
+const ingles = db.Materia.findOne({ nombre: "Inglés" })
+const grado6 = db.Grados.findOne({ grado: "sexto" })
+const grado7 = db.Grados.findOne({ grado: "septimo" })
+const grado8 = db.Grados.findOne({ grado: "octavo" })
+db.Calificaciones.insertMany([
+  { alumnoId: juan, materiaId: mate, gradoId: grado6, notaNumerica: 95, escala: "Superior" },
+  { alumnoId: juan, materiaId: ingles, gradoId: grado6, notaNumerica: 78, escala: "Básico" },
+  { alumnoId: ana, materiaId: lengua, gradoId: grado7, notaNumerica: 88, escala: "Alto" },
+  { alumnoId: ana, materiaId: ciencias, gradoId: grado7, notaNumerica: 61, escala: "Básico" },
+  { alumnoId: luis, materiaId: historia, gradoId: grado8, notaNumerica: 53, escala: "Bajo" },
+  { alumnoId: luis, materiaId: mate, gradoId: grado8, notaNumerica: 84, escala: "Alto" },
+  { alumnoId: sofia, materiaId: ciencias, gradoId: grado6, notaNumerica: 91, escala: "Superior" },
+  { alumnoId: mateo, materiaId: lengua, gradoId: grado7, notaNumerica: 73, escala: "Básico" },
+  { alumnoId: mateo, materiaId: historia, gradoId: grado7, notaNumerica: 67, escala: "Básico" },
+  { alumnoId: sofia, materiaId: ingles, gradoId: grado6, notaNumerica: 48, escala: "Bajo" }
+])
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId('6816a53b403b6ffd519051b0'),
+    '1': ObjectId('6816a53b403b6ffd519051b1'),
+    '2': ObjectId('6816a53b403b6ffd519051b2'),
+    '3': ObjectId('6816a53b403b6ffd519051b3'),
+    '4': ObjectId('6816a53b403b6ffd519051b4'),
+    '5': ObjectId('6816a53b403b6ffd519051b5'),
+    '6': ObjectId('6816a53b403b6ffd519051b6'),
+    '7': ObjectId('6816a53b403b6ffd519051b7'),
+    '8': ObjectId('6816a53b403b6ffd519051b8'),
+    '9': ObjectId('6816a53b403b6ffd519051b9')
+  }
+}
+db.Calificaciones.find().pretty()
+{
+  _id: ObjectId('6816a53b403b6ffd519051b0'),
+  alumnoId: {
+    _id: ObjectId('6816a3d3403b6ffd519051a3'),
+    nombre: 'Juan Pérez',
+    edad: 13
+  },
+  materiaId: {
+    _id: ObjectId('6816a418403b6ffd519051a8'),
+    nombre: 'Matemáticas'
+  },
+  gradoId: {
+    _id: ObjectId('6816a453403b6ffd519051ad'),
+    grado: 'sexto'
+  },
+  notaNumerica: 95,
+  escala: 'Superior'
+}
+{
+  _id: ObjectId('6816a53b403b6ffd519051b1'),
+  alumnoId: {
+    _id: ObjectId('6816a3d3403b6ffd519051a3'),
+    nombre: 'Juan Pérez',
+    edad: 13
+  },
+  materiaId: {
+    _id: ObjectId('6816a418403b6ffd519051ac'),
+    nombre: 'Inglés'
+  },
+  gradoId: {
+    _id: ObjectId('6816a453403b6ffd519051ad'),
+    grado: 'sexto'
+  },
+  notaNumerica: 78,
+  escala: 'Básico'
+}
+{
+  _id: ObjectId('6816a53b403b6ffd519051b2'),
+  alumnoId: ObjectId('6816a3d3403b6ffd519051a4'),
+  materiaId: {
+    _id: ObjectId('6816a418403b6ffd519051a9'),
+    nombre: 'Lengua'
+  },
+  gradoId: {
+    _id: ObjectId('6816a453403b6ffd519051ae'),
+    grado: 'septimo'
+  },
+  notaNumerica: 88,
+  escala: 'Alto'
+}
+{
+  _id: ObjectId('6816a53b403b6ffd519051b3'),
+  alumnoId: ObjectId('6816a3d3403b6ffd519051a4'),
+  materiaId: {
+    _id: ObjectId('6816a418403b6ffd519051aa'),
+    nombre: 'Ciencias'
+  },
+  gradoId: {
+    _id: ObjectId('6816a453403b6ffd519051ae'),
+    grado: 'septimo'
+  },
+  notaNumerica: 61,
+  escala: 'Básico'
+}
+{
+  _id: ObjectId('6816a53b403b6ffd519051b4'),
+  alumnoId: {
+    _id: ObjectId('6816a3d3403b6ffd519051a5'),
+    nombre: 'Luis García',
+    edad: 13
+  },
+  materiaId: {
+    _id: ObjectId('6816a418403b6ffd519051ab'),
+    nombre: 'Historia'
+  },
+  gradoId: {
+    _id: ObjectId('6816a453403b6ffd519051af'),
+    grado: 'octavo'
+  },
+  notaNumerica: 53,
+  escala: 'Bajo'
+}
+{
+  _id: ObjectId('6816a53b403b6ffd519051b5'),
+  alumnoId: {
+    _id: ObjectId('6816a3d3403b6ffd519051a5'),
+    nombre: 'Luis García',
+    edad: 13
+  },
+  materiaId: {
+    _id: ObjectId('6816a418403b6ffd519051a8'),
+    nombre: 'Matemáticas'
+  },
+  gradoId: {
+    _id: ObjectId('6816a453403b6ffd519051af'),
+    grado: 'octavo'
+  },
+  notaNumerica: 84,
+  escala: 'Alto'
+}
+{
+  _id: ObjectId('6816a53b403b6ffd519051b6'),
+  alumnoId: {
+    _id: ObjectId('6816a3d3403b6ffd519051a6'),
+    nombre: 'Sofía Ruiz',
+    edad: 12
+  },
+  materiaId: {
+    _id: ObjectId('6816a418403b6ffd519051aa'),
+    nombre: 'Ciencias'
+  },
+  gradoId: {
+    _id: ObjectId('6816a453403b6ffd519051ad'),
+    grado: 'sexto'
+  },
+  notaNumerica: 91,
+  escala: 'Superior'
+}
+{
+  _id: ObjectId('6816a53b403b6ffd519051b7'),
+  alumnoId: {
+    _id: ObjectId('6816a3d3403b6ffd519051a7'),
+    nombre: 'Mateo López',
+    edad: 15
+  },
+  materiaId: {
+    _id: ObjectId('6816a418403b6ffd519051a9'),
+    nombre: 'Lengua'
+  },
+  gradoId: {
+    _id: ObjectId('6816a453403b6ffd519051ae'),
+    grado: 'septimo'
+  },
+  notaNumerica: 73,
+  escala: 'Básico'
+}
+{
+  _id: ObjectId('6816a53b403b6ffd519051b8'),
+  alumnoId: {
+    _id: ObjectId('6816a3d3403b6ffd519051a7'),
+    nombre: 'Mateo López',
+    edad: 15
+  },
+  materiaId: {
+    _id: ObjectId('6816a418403b6ffd519051ab'),
+    nombre: 'Historia'
+  },
+  gradoId: {
+    _id: ObjectId('6816a453403b6ffd519051ae'),
+    grado: 'septimo'
+  },
+  notaNumerica: 67,
+  escala: 'Básico'
+}
+{
+  _id: ObjectId('6816a53b403b6ffd519051b9'),
+  alumnoId: {
+    _id: ObjectId('6816a3d3403b6ffd519051a6'),
+    nombre: 'Sofía Ruiz',
+    edad: 12
+  },
+  materiaId: {
+    _id: ObjectId('6816a418403b6ffd519051ac'),
+    nombre: 'Inglés'
+  },
+  gradoId: {
+    _id: ObjectId('6816a453403b6ffd519051ad'),
+    grado: 'sexto'
+  },
+  notaNumerica: 48,
+  escala: 'Bajo'
+}
+db.Calificaciones

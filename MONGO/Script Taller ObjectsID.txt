@@ -1,0 +1,182 @@
+const clienteAna = db.Clientes.findOne({ nombre: "Ana" });
+const clienteLuis = db.Clientes.findOne({ nombre: "Luis" });
+const clienteLucia = db.Clientes.findOne({ nombre: "Lucía" });
+const clientePedro = db.Clientes.findOne({ nombre: "Pedro" });
+const clienteElena = db.Clientes.findOne({ nombre: "Elena" });
+const clienteMario = db.Clientes.findOne({ nombre: "Mario" });
+const clienteSara = db.Clientes.findOne({ nombre: "Sara" });
+const clienteSofia = db.Clientes.findOne({ nombre: "Sofia" });
+const clienteJuan = db.Clientes.findOne({ nombre: "Juan" });
+
+// De la misma manera para los productos
+const camisa = db.productos.findOne({ nombre: "camisa" });
+const pantalon = db.productos.findOne({ nombre: "pantalon" });
+const gorro = db.productos.findOne({ nombre: "gorro" });
+const chaqueta = db.productos.findOne({ nombre: "chaqueta" });
+const zapatos = db.productos.findOne({ nombre: "zapatos" });
+const camiseta = db.productos.findOne({ nombre: "camiseta" });
+const vestido = db.productos.findOne({ nombre: "vestido" });
+const abrigo = db.productos.findOne({ nombre: "abrigo" });
+const bolso = db.productos.findOne({ nombre: "bolso" });
+const bufanda = db.productos.findOne({ nombre: "bufanda" })._id;
+const falda = db.productos.findOne({ nombre: "falda" });
+const botas = db.productos.findOne({ nombre: "botas" });
+
+db.ventas.insertMany([
+  {
+    codigo: "V001",
+    cliente: clienteAna,
+    productos: [camisa, pantalon],
+    total: 120,
+    fecha: new Date("2024-01-10"),
+    pagado: true,
+    metodoPago: "tarjeta",
+    detalles: { items: 2, descuento: 10 }
+  },
+  {
+    codigo: "V002",
+    cliente: clienteLuis,
+    productos: [gorro],
+    total: 30,
+    fecha: new Date("2024-01-12"),
+    pagado: false,
+    metodoPago: "efectivo",
+    detalles: { items: 1, descuento: 0 }
+  },
+  {
+    codigo: "V003",
+    cliente: clienteLucia,
+    productos: [chaqueta, zapatos, camisa],
+    total: 400,
+    fecha: new Date("2024-01-15"),
+    pagado: true,
+    metodoPago: "tarjeta",
+    detalles: { items: 3, descuento: 20 }
+  },
+  {
+    codigo: "V004",
+    cliente: clientePedro,
+    productos: [camiseta],
+    total: 50,
+    fecha: new Date("2024-02-01"),
+    pagado: false,
+    metodoPago: "efectivo"
+  },
+  {
+    codigo: "V005",
+    cliente: clienteCarlos,
+    productos: [],
+    total: 90,
+    fecha: new Date("2024-02-05"),
+    pagado: true,
+    metodoPago: "tarjeta",
+    detalles: { items: 0, descuento: 0 }
+  },
+  {
+    codigo: "V006",
+    cliente: clienteElena,
+    productos: [vestido, zapatos],
+    total: 180,
+    fecha: new Date("2024-02-10"),
+    pagado: true,
+    metodoPago: "efectivo",
+    detalles: { items: 2, descuento: 5 }
+  },
+  {
+    codigo: "V007",
+    cliente: clienteSara,
+    productos: [abrigo, bolso, bufanda],
+    total: 250,
+    fecha: new Date("2024-03-01"),
+    pagado: false,
+    metodoPago: "tarjeta",
+    detalles: { items: 3, descuento: 15 }
+  },
+  {
+    codigo: "V008",
+    cliente: clienteMario,
+    productos: [pantalon],
+    total: 75,
+    fecha: new Date("2024-03-10"),
+    pagado: true,
+    metodoPago: "transferencia"
+  },
+  {
+    codigo: "V009",
+    cliente: clienteSofia,
+    productos: [falda, camisa],
+    total: 100,
+    fecha: new Date("2024-04-01"),
+    pagado: false,
+    metodoPago: "efectivo",
+    detalles: { items: 2, descuento: 0 }
+  },
+  {
+    codigo: "V010",
+    cliente: clienteJuan,
+    productos: [chaqueta, botas, bufanda],
+    total: 300,
+    fecha: new Date("2024-04-15"),
+    pagado: true,
+    metodoPago: "tarjeta"
+  }
+]);
+
+use Colegio
+
+db.Alumnos.insertMany([
+  { nombre: "Juan Pérez", edad: 13 },
+  { nombre: "Ana Torres", edad: 14 },
+  { nombre: "Luis García", edad: 13 },
+  { nombre: "Sofía Ruiz", edad: 12 },
+  { nombre: "Mateo López", edad: 15 }
+])
+
+
+db.Materia.insertMany([
+  { nombre: "Matemáticas" },
+  {  nombre: "Lengua" },
+  { nombre: "Ciencias" },
+  { nombre: "Historia" },
+  { nombre: "Inglés" }
+])
+
+db.Grados.insertMany([
+  {grado: "sexto" },
+  { grado: "septimo" },
+  { grado: "octavo" }
+])
+
+const juan = db.Alumnos.findOne({ nombre: "Juan Pérez" })
+const ana = db.Alumnos.findOne({ nombre: "Ana Torres" })
+const luis = db.Alumnos.findOne({ nombre: "Luis García" })
+const sofia = db.Alumnos.findOne({ nombre: "Sofía Ruiz" })
+const mateo = db.Alumnos.findOne({ nombre: "Mateo López" })
+
+const mate = db.Materia.findOne({ nombre: "Matemáticas" })
+const lengua = db.Materia.findOne({ nombre: "Lengua" })
+const ciencias = db.Materia.findOne({ nombre: "Ciencias" })
+const historia = db.Materia.findOne({ nombre: "Historia" })
+const ingles = db.Materia.findOne({ nombre: "Inglés" })
+
+const grado6 = db.Grados.findOne({ grado: "sexto" })
+const grado7 = db.Grados.findOne({ grado: "septimo" })
+const grado8 = db.Grados.findOne({ grado: "octavo" })
+
+db.Calificaciones.insertMany([
+  { alumnoId: juan, materiaId: mate, gradoId: grado6, notaNumerica: 95, escala: "Superior" },
+  { alumnoId: juan, materiaId: ingles, gradoId: grado6, notaNumerica: 78, escala: "Básico" },
+  { alumnoId: ana, materiaId: lengua, gradoId: grado7, notaNumerica: 88, escala: "Alto" },
+  { alumnoId: ana, materiaId: ciencias, gradoId: grado7, notaNumerica: 61, escala: "Básico" },
+  { alumnoId: luis, materiaId: historia, gradoId: grado8, notaNumerica: 53, escala: "Bajo" },
+  { alumnoId: luis, materiaId: mate, gradoId: grado8, notaNumerica: 84, escala: "Alto" },
+  { alumnoId: sofia, materiaId: ciencias, gradoId: grado6, notaNumerica: 91, escala: "Superior" },
+  { alumnoId: mateo, materiaId: lengua, gradoId: grado7, notaNumerica: 73, escala: "Básico" },
+  { alumnoId: mateo, materiaId: historia, gradoId: grado7, notaNumerica: 67, escala: "Básico" },
+  { alumnoId: sofia, materiaId: ingles, gradoId: grado6, notaNumerica: 48, escala: "Bajo" }
+])
+
+
+El operador $lookup en MongoDB sirve para unir datos de varias colecciones, parecido a un JOIN en SQL.
+Toma documentos de una colección y les agrega datos relacionados de otra colección basándose en un campo común (como IDs). El resultado es un arreglo con los documentos coincidentes.
+
