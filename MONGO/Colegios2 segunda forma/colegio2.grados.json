@@ -1,0 +1,18 @@
+[{
+  "_id": {
+    "$oid": "6816a453403b6ffd519051ad"
+  },
+  "grado": "sexto"
+},
+{
+  "_id": {
+    "$oid": "6816a453403b6ffd519051ae"
+  },
+  "grado": "septimo"
+},
+{
+  "_id": {
+    "$oid": "6816a453403b6ffd519051af"
+  },
+  "grado": "octavo"
+}]

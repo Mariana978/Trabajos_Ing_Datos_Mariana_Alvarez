@@ -1,0 +1,252 @@
+[{
+  "_id": {
+    "$oid": "6816a53b403b6ffd519051b0"
+  },
+  "alumnoId": {
+    "_id": {
+      "$oid": "6816a3d3403b6ffd519051a3"
+    },
+    "nombre": "Juan Pérez",
+    "edad": 13
+  },
+  "materiaId": {
+    "_id": {
+      "$oid": "6816a418403b6ffd519051a8"
+    },
+    "nombre": "Matemáticas"
+  },
+  "gradoId": {
+    "_id": {
+      "$oid": "6816a453403b6ffd519051ad"
+    },
+    "grado": "sexto"
+  },
+  "notaNumerica": 95,
+  "escala": "Superior"
+},
+{
+  "_id": {
+    "$oid": "6816a53b403b6ffd519051b1"
+  },
+  "alumnoId": {
+    "_id": {
+      "$oid": "6816a3d3403b6ffd519051a3"
+    },
+    "nombre": "Juan Pérez",
+    "edad": 13
+  },
+  "materiaId": {
+    "_id": {
+      "$oid": "6816a418403b6ffd519051ac"
+    },
+    "nombre": "Inglés"
+  },
+  "gradoId": {
+    "_id": {
+      "$oid": "6816a453403b6ffd519051ad"
+    },
+    "grado": "sexto"
+  },
+  "notaNumerica": 78,
+  "escala": "Básico"
+},
+{
+  "_id": {
+    "$oid": "6816a53b403b6ffd519051b2"
+  },
+  "alumnoId": {
+    "$oid": "6816a3d3403b6ffd519051a4"
+  },
+  "materiaId": {
+    "_id": {
+      "$oid": "6816a418403b6ffd519051a9"
+    },
+    "nombre": "Lengua"
+  },
+  "gradoId": {
+    "_id": {
+      "$oid": "6816a453403b6ffd519051ae"
+    },
+    "grado": "septimo"
+  },
+  "notaNumerica": 88,
+  "escala": "Alto"
+},
+{
+  "_id": {
+    "$oid": "6816a53b403b6ffd519051b3"
+  },
+  "alumnoId": {
+    "$oid": "6816a3d3403b6ffd519051a4"
+  },
+  "materiaId": {
+    "_id": {
+      "$oid": "6816a418403b6ffd519051aa"
+    },
+    "nombre": "Ciencias"
+  },
+  "gradoId": {
+    "_id": {
+      "$oid": "6816a453403b6ffd519051ae"
+    },
+    "grado": "septimo"
+  },
+  "notaNumerica": 61,
+  "escala": "Básico"
+},
+{
+  "_id": {
+    "$oid": "6816a53b403b6ffd519051b4"
+  },
+  "alumnoId": {
+    "_id": {
+      "$oid": "6816a3d3403b6ffd519051a5"
+    },
+    "nombre": "Luis García",
+    "edad": 13
+  },
+  "materiaId": {
+    "_id": {
+      "$oid": "6816a418403b6ffd519051ab"
+    },
+    "nombre": "Historia"
+  },
+  "gradoId": {
+    "_id": {
+      "$oid": "6816a453403b6ffd519051af"
+    },
+    "grado": "octavo"
+  },
+  "notaNumerica": 53,
+  "escala": "Bajo"
+},
+{
+  "_id": {
+    "$oid": "6816a53b403b6ffd519051b5"
+  },
+  "alumnoId": {
+    "_id": {
+      "$oid": "6816a3d3403b6ffd519051a5"
+    },
+    "nombre": "Luis García",
+    "edad": 13
+  },
+  "materiaId": {
+    "_id": {
+      "$oid": "6816a418403b6ffd519051a8"
+    },
+    "nombre": "Matemáticas"
+  },
+  "gradoId": {
+    "_id": {
+      "$oid": "6816a453403b6ffd519051af"
+    },
+    "grado": "octavo"
+  },
+  "notaNumerica": 84,
+  "escala": "Alto"
+},
+{
+  "_id": {
+    "$oid": "6816a53b403b6ffd519051b6"
+  },
+  "alumnoId": {
+    "_id": {
+      "$oid": "6816a3d3403b6ffd519051a6"
+    },
+    "nombre": "Sofía Ruiz",
+    "edad": 12
+  },
+  "materiaId": {
+    "_id": {
+      "$oid": "6816a418403b6ffd519051aa"
+    },
+    "nombre": "Ciencias"
+  },
+  "gradoId": {
+    "_id": {
+      "$oid": "6816a453403b6ffd519051ad"
+    },
+    "grado": "sexto"
+  },
+  "notaNumerica": 91,
+  "escala": "Superior"
+},
+{
+  "_id": {
+    "$oid": "6816a53b403b6ffd519051b7"
+  },
+  "alumnoId": {
+    "_id": {
+      "$oid": "6816a3d3403b6ffd519051a7"
+    },
+    "nombre": "Mateo López",
+    "edad": 15
+  },
+  "materiaId": {
+    "_id": {
+      "$oid": "6816a418403b6ffd519051a9"
+    },
+    "nombre": "Lengua"
+  },
+  "gradoId": {
+    "_id": {
+      "$oid": "6816a453403b6ffd519051ae"
+    },
+    "grado": "septimo"
+  },
+  "notaNumerica": 73,
+  "escala": "Básico"
+},
+{
+  "_id": {
+    "$oid": "6816a53b403b6ffd519051b8"
+  },
+  "alumnoId": {
+    "_id": {
+      "$oid": "6816a3d3403b6ffd519051a7"
+    },
+    "nombre": "Mateo López",
+    "edad": 15
+  },
+  "materiaId": {
+    "_id": {
+      "$oid": "6816a418403b6ffd519051ab"
+    },
+    "nombre": "Historia"
+  },
+  "gradoId": {
+    "_id": {
+      "$oid": "6816a453403b6ffd519051ae"
+    },
+    "grado": "septimo"
+  },
+  "notaNumerica": 67,
+  "escala": "Básico"
+},
+{
+  "_id": {
+    "$oid": "6816a53b403b6ffd519051b9"
+  },
+  "alumnoId": {
+    "_id": {
+      "$oid": "6816a3d3403b6ffd519051a6"
+    },
+    "nombre": "Sofía Ruiz",
+    "edad": 12
+  },
+  "materiaId": {
+    "_id": {
+      "$oid": "6816a418403b6ffd519051ac"
+    },
+    "nombre": "Inglés"
+  },
+  "gradoId": {
+    "_id": {
+      "$oid": "6816a453403b6ffd519051ad"
+    },
+    "grado": "sexto"
+  },
+  "notaNumerica": 48,
+  "escala": "Bajo"
+}]

@@ -1,0 +1,30 @@
+[{
+  "_id": {
+    "$oid": "6816a418403b6ffd519051a8"
+  },
+  "nombre": "Matemáticas"
+},
+{
+  "_id": {
+    "$oid": "6816a418403b6ffd519051a9"
+  },
+  "nombre": "Lengua"
+},
+{
+  "_id": {
+    "$oid": "6816a418403b6ffd519051aa"
+  },
+  "nombre": "Ciencias"
+},
+{
+  "_id": {
+    "$oid": "6816a418403b6ffd519051ab"
+  },
+  "nombre": "Historia"
+},
+{
+  "_id": {
+    "$oid": "6816a418403b6ffd519051ac"
+  },
+  "nombre": "Inglés"
+}]

@@ -1,0 +1,35 @@
+[{
+  "_id": {
+    "$oid": "6816a3d3403b6ffd519051a3"
+  },
+  "nombre": "Juan Pérez",
+  "edad": 13
+},
+{
+  "_id": {
+    "$oid": "6816a3d3403b6ffd519051a4"
+  },
+  "nombre": "Ana Torres",
+  "edad": 14
+},
+{
+  "_id": {
+    "$oid": "6816a3d3403b6ffd519051a5"
+  },
+  "nombre": "Luis García",
+  "edad": 13
+},
+{
+  "_id": {
+    "$oid": "6816a3d3403b6ffd519051a6"
+  },
+  "nombre": "Sofía Ruiz",
+  "edad": 12
+},
+{
+  "_id": {
+    "$oid": "6816a3d3403b6ffd519051a7"
+  },
+  "nombre": "Mateo López",
+  "edad": 15
+}]
