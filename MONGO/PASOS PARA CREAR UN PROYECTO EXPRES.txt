@@ -1,0 +1,8 @@
+PASOS PARA CREAR UN PROYECTO EXPRESS
+1. mkdir (nombreCarpeta)
+2. cd (nombreCarpeta)
+3. Set-ExecutionPolicy Unrestricted  oooo  Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass  
+4. npm install express mongoose body-parser cors
+5. npm init -y
+6. npm install --save--dev nodemon      
+
