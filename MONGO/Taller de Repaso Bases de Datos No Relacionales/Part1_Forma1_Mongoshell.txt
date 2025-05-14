@@ -1,0 +1,160 @@
+use tallerMongoBD
+switched to db tallerMongoBD
+db.createCollection ("usuarios")
+{ ok: 1 }
+db.usuarios.insertMany([{nombre:"Juan Pérez", edad: 30, correo:"juan.perez@urosario.com"},{nombre:"Ana López", edad: 25, correo:"ana.lopez@urosario.com"},{nombre:"Luis Torres", edad:35, correo:"luis.torres@urosario.com"}])
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId('682238d58d53c6ad32f3b162'),
+    '1': ObjectId('682238d58d53c6ad32f3b163'),
+    '2': ObjectId('682238d58d53c6ad32f3b164')
+  }
+}
+ 
+ 
+db.usuarios.find().pretty()
+{
+  _id: ObjectId('682238d58d53c6ad32f3b162'),
+  nombre: 'Juan Pérez',
+  edad: 30,
+  correo: 'juan.perez@urosario.com'
+}
+{
+  _id: ObjectId('682238d58d53c6ad32f3b163'),
+  nombre: 'Ana López',
+  edad: 25,
+  correo: 'ana.lopez@urosario.com'
+}
+{
+  _id: ObjectId('682238d58d53c6ad32f3b164'),
+  nombre: 'Luis Torres',
+  edad: 35,
+  correo: 'luis.torres@urosario.com'
+}
+db.usuarios.find({ nombre: { $eq: "Ana López" } })
+{
+  _id: ObjectId('682238d58d53c6ad32f3b163'),
+  nombre: 'Ana López',
+  edad: 25,
+  correo: 'ana.lopez@urosario.com'
+}
+db.usuarios.find({ edad: { $gte: 30 } })
+{
+  _id: ObjectId('682238d58d53c6ad32f3b162'),
+  nombre: 'Juan Pérez',
+  edad: 30,
+  correo: 'juan.perez@urosario.com'
+}
+{
+  _id: ObjectId('682238d58d53c6ad32f3b164'),
+  nombre: 'Luis Torres',
+  edad: 35,
+  correo: 'luis.torres@urosario.com'
+}
+db.usuarios.updateOne({nombre:"Juan Pérez"}, {$set: {edad: 31}})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+db.usuarios.find({ nombre: { $eq: "Juan Pérez" } })
+{
+  _id: ObjectId('682238d58d53c6ad32f3b162'),
+  nombre: 'Juan Pérez',
+  edad: 31,
+  correo: 'juan.perez@urosario.com'
+}
+db.usuarios.updateOne({edad:{$gte: 30}}, {$set: {activo: "true"}})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+db.usuarios.find().pretty()
+{
+  _id: ObjectId('682238d58d53c6ad32f3b162'),
+  nombre: 'Juan Pérez',
+  edad: 31,
+  correo: 'juan.perez@urosario.com',
+  activo: 'true'
+}
+{
+  _id: ObjectId('682238d58d53c6ad32f3b163'),
+  nombre: 'Ana López',
+  edad: 25,
+  correo: 'ana.lopez@urosario.com'
+}
+{
+  _id: ObjectId('682238d58d53c6ad32f3b164'),
+  nombre: 'Luis Torres',
+  edad: 35,
+  correo: 'luis.torres@urosario.com'
+}
+db.usuarios.updateMany({edad:{$gte: 30}}, {$set: {activo: "true"}})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 2,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+db.usuarios.find().pretty()
+{
+  _id: ObjectId('682238d58d53c6ad32f3b162'),
+  nombre: 'Juan Pérez',
+  edad: 31,
+  correo: 'juan.perez@urosario.com',
+  activo: 'true'
+}
+{
+  _id: ObjectId('682238d58d53c6ad32f3b163'),
+  nombre: 'Ana López',
+  edad: 25,
+  correo: 'ana.lopez@urosario.com'
+}
+{
+  _id: ObjectId('682238d58d53c6ad32f3b164'),
+  nombre: 'Luis Torres',
+  edad: 35,
+  correo: 'luis.torres@urosario.com',
+  activo: 'true'
+}
+db.usuarios.deleteOne({ nombre: "Luis Torres" })
+{
+  acknowledged: true,
+  deletedCount: 1
+}
+db.usuarios.find().pretty()
+{
+  _id: ObjectId('682238d58d53c6ad32f3b162'),
+  nombre: 'Juan Pérez',
+  edad: 31,
+  correo: 'juan.perez@urosario.com',
+  activo: 'true'
+}
+{
+  _id: ObjectId('682238d58d53c6ad32f3b163'),
+  nombre: 'Ana López',
+  edad: 25,
+  correo: 'ana.lopez@urosario.com'
+}
+db.usuarios.deleteMany({edad:{$lt: 30}})
+{
+  acknowledged: true,
+  deletedCount: 1
+}
+db.usuarios.find().pretty()
+{
+  _id: ObjectId('682238d58d53c6ad32f3b162'),
+  nombre: 'Juan Pérez',
+  edad: 31,
+  correo: 'juan.perez@urosario.com',
+  activo: 'true'
+}
+tallerMongoBD
+

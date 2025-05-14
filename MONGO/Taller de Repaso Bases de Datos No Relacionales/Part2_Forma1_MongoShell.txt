@@ -1,0 +1,241 @@
+use tallerMongoBD
+switched to db tallerMongoBD
+db.createCollection("productos")
+{ ok: 1 }
+db.productos.insertMany([{nombre:"Computador", precio: 1500, categoria:"Electrónica"},{nombre:"Cama",precio:1000,categoria:"Hogar"}, {nombre:"Vestido de flores", precio: 500, categoria:"Ropa"},{nombre:"Bufanda",precio:300,categoria:"Ropa"},{nombre:"Mesita de noche",precio:1200,categoria:"Hogar"}])
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId('682405d40f2b427d5190f9af'),
+    '1': ObjectId('682405d40f2b427d5190f9b0'),
+    '2': ObjectId('682405d40f2b427d5190f9b1'),
+    '3': ObjectId('682405d40f2b427d5190f9b2'),
+    '4': ObjectId('682405d40f2b427d5190f9b3')
+  }
+}
+db.productos.find()
+{
+  _id: ObjectId('682405d40f2b427d5190f9af'),
+  nombre: 'Computador',
+  precio: 1500,
+  categoria: 'Electrónica'
+}
+{
+  _id: ObjectId('682405d40f2b427d5190f9b0'),
+  nombre: 'Cama',
+  precio: 1000,
+  categoria: 'Hogar'
+}
+{
+  _id: ObjectId('682405d40f2b427d5190f9b1'),
+  nombre: 'Vestido de flores',
+  precio: 500,
+  categoria: 'Ropa'
+}
+{
+  _id: ObjectId('682405d40f2b427d5190f9b2'),
+  nombre: 'Bufanda',
+  precio: 300,
+  categoria: 'Ropa'
+}
+{
+  _id: ObjectId('682405d40f2b427d5190f9b3'),
+  nombre: 'Mesita de noche',
+  precio: 1200,
+  categoria: 'Hogar'
+}
+db.productos.find({precio: {$gt: 100} })
+{
+  _id: ObjectId('682405d40f2b427d5190f9af'),
+  nombre: 'Computador',
+  precio: 1500,
+  categoria: 'Electrónica'
+}
+{
+  _id: ObjectId('682405d40f2b427d5190f9b0'),
+  nombre: 'Cama',
+  precio: 1000,
+  categoria: 'Hogar'
+}
+{
+  _id: ObjectId('682405d40f2b427d5190f9b1'),
+  nombre: 'Vestido de flores',
+  precio: 500,
+  categoria: 'Ropa'
+}
+{
+  _id: ObjectId('682405d40f2b427d5190f9b2'),
+  nombre: 'Bufanda',
+  precio: 300,
+  categoria: 'Ropa'
+}
+{
+  _id: ObjectId('682405d40f2b427d5190f9b3'),
+  nombre: 'Mesita de noche',
+  precio: 1200,
+  categoria: 'Hogar'
+}
+db.productos.find({precio: {$gt: 100 }}).sort({ precio: -1 })
+{
+  _id: ObjectId('682405d40f2b427d5190f9af'),
+  nombre: 'Computador',
+  precio: 1500,
+  categoria: 'Electrónica'
+}
+{
+  _id: ObjectId('682405d40f2b427d5190f9b3'),
+  nombre: 'Mesita de noche',
+  precio: 1200,
+  categoria: 'Hogar'
+}
+{
+  _id: ObjectId('682405d40f2b427d5190f9b0'),
+  nombre: 'Cama',
+  precio: 1000,
+  categoria: 'Hogar'
+}
+{
+  _id: ObjectId('682405d40f2b427d5190f9b1'),
+  nombre: 'Vestido de flores',
+  precio: 500,
+  categoria: 'Ropa'
+}
+{
+  _id: ObjectId('682405d40f2b427d5190f9b2'),
+  nombre: 'Bufanda',
+  precio: 300,
+  categoria: 'Ropa'
+}
+db.productos.updateMany({}, { $set: { stock: true } })
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 5,
+  modifiedCount: 5,
+  upsertedCount: 0
+}
+db.productos.find()
+{
+  _id: ObjectId('682405d40f2b427d5190f9af'),
+  nombre: 'Computador',
+  precio: 1500,
+  categoria: 'Electrónica',
+  stock: true
+}
+{
+  _id: ObjectId('682405d40f2b427d5190f9b0'),
+  nombre: 'Cama',
+  precio: 1000,
+  categoria: 'Hogar',
+  stock: true
+}
+{
+  _id: ObjectId('682405d40f2b427d5190f9b1'),
+  nombre: 'Vestido de flores',
+  precio: 500,
+  categoria: 'Ropa',
+  stock: true
+}
+{
+  _id: ObjectId('682405d40f2b427d5190f9b2'),
+  nombre: 'Bufanda',
+  precio: 300,
+  categoria: 'Ropa',
+  stock: true
+}
+{
+  _id: ObjectId('682405d40f2b427d5190f9b3'),
+  nombre: 'Mesita de noche',
+  precio: 1200,
+  categoria: 'Hogar',
+  stock: true
+}
+db.productos.updateMany({ precio: { $gt: 500 } },{ $set: { stock: false }}
+)
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 3,
+  modifiedCount: 3,
+  upsertedCount: 0
+}
+db.productos.find()
+{
+  _id: ObjectId('682405d40f2b427d5190f9af'),
+  nombre: 'Computador',
+  precio: 1500,
+  categoria: 'Electrónica',
+  stock: false
+}
+{
+  _id: ObjectId('682405d40f2b427d5190f9b0'),
+  nombre: 'Cama',
+  precio: 1000,
+  categoria: 'Hogar',
+  stock: false
+}
+{
+  _id: ObjectId('682405d40f2b427d5190f9b1'),
+  nombre: 'Vestido de flores',
+  precio: 500,
+  categoria: 'Ropa',
+  stock: true
+}
+{
+  _id: ObjectId('682405d40f2b427d5190f9b2'),
+  nombre: 'Bufanda',
+  precio: 300,
+  categoria: 'Ropa',
+  stock: true
+}
+{
+  _id: ObjectId('682405d40f2b427d5190f9b3'),
+  nombre: 'Mesita de noche',
+  precio: 1200,
+  categoria: 'Hogar',
+  stock: false
+}
+db.productos.deleteMany({ precio: { $lt: 50 } })
+{
+  acknowledged: true,
+  deletedCount: 0
+}
+db.productos.find()
+{
+  _id: ObjectId('682405d40f2b427d5190f9af'),
+  nombre: 'Computador',
+  precio: 1500,
+  categoria: 'Electrónica',
+  stock: false
+}
+{
+  _id: ObjectId('682405d40f2b427d5190f9b0'),
+  nombre: 'Cama',
+  precio: 1000,
+  categoria: 'Hogar',
+  stock: false
+}
+{
+  _id: ObjectId('682405d40f2b427d5190f9b1'),
+  nombre: 'Vestido de flores',
+  precio: 500,
+  categoria: 'Ropa',
+  stock: true
+}
+{
+  _id: ObjectId('682405d40f2b427d5190f9b2'),
+  nombre: 'Bufanda',
+  precio: 300,
+  categoria: 'Ropa',
+  stock: true
+}
+{
+  _id: ObjectId('682405d40f2b427d5190f9b3'),
+  nombre: 'Mesita de noche',
+  precio: 1200,
+  categoria: 'Hogar',
+  stock: false
+}
+tallerMongoBD
+
+
