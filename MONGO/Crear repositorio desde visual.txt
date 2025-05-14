@@ -1,0 +1,8 @@
+Crear repositorio desde visual
+1. git clone (url)
+2. npm i (package jason)
+3. npm start
+4. git status (para ver las modificaciones que hicimos)
+5. git add . (para ponerlo en el repositorio)
+6. git commit -m "Feature: Ajuste routes y app.js"
+7. git push -u origin main
